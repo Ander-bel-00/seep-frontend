@@ -1,0 +1,57 @@
+.fichasForm-main-box{
+  margin-top: 120px;
+  padding-top: 20px;
+}
+.contenedor-formulario-2 {
+  max-width: 1900px;
+  width: 900px;
+  margin-top: -90px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.formularioFichas {
+  width: 390px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 9px;
+  background-color: #ffffff;
+  position: relative;
+  top: 25px;
+}
+
+
+.formularioFichas input::placeholder{
+  color: rgb(0, 0, 0);
+}
+
+
+
+
+.titulo-fichas{
+  font-size: 30px;
+}
+
+.formularioFichas input[type="text"],
+.formularioFichas input[type="date"],
+.formularioFichas button {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.formularioFichas button {
+  background-color: #00324D;
+  color: white;
+  cursor: pointer;
+}
+
+.formularioFichas button:hover {
+  background-color: #00324de0;
+}
+
+

@@ -1,0 +1,90 @@
+.new-fichas-fomr-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 2rem;
+}
+.formularioFichasInstructor {
+    width: 50%;
+    padding: 25px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 2px 2px 19px 10px rgba(0,0,0,0.1);
+    -webkit-box-shadow: 2px 2px 19px 10px rgba(0,0,0,0.1);
+    -moz-box-shadow: 2px 2px 19px 10px rgba(0,0,0,0.1);
+}
+.title-nweFichas {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    color: #39a900;
+}
+.form-fichas-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 28px; /* Espacio entre las columnas */
+    padding: 5px;
+}
+.form-fichas-col1,
+.form-fichas-col2 {
+    flex: 1;
+}
+.formularioFichasInstructor input[type="text"],
+.formularioFichasInstructor input[type="date"],
+.formularioFichasInstructor button,
+.formularioFichasInstructor select {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.formularioFichasInstructor label {
+    text-wrap: nowrap;
+    font-weight: 600;
+}
+.formularioFichasInstructor button {
+    background-color: #39a900;
+    color: white;
+    cursor: pointer;
+}
+.formularioFichasInstructor button:hover {
+    background-color: #2c8101;
+}
+
+/* Media Query para dispositivos móviles */
+@media (max-width: 480px) {
+    .new-fichas-fomr-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 2rem;
+        position: relative;
+        right: 2rem;
+    }
+    .formularioFichasInstructor {
+        width: 90%; /* Hacer que el formulario ocupe más espacio en pantallas pequeñas */
+        padding: 15px; /* Reducir el padding para pantallas pequeñas */
+    }
+    .form-fichas-container {
+        flex-direction: column; /* Cambiar la dirección del flex a columna */
+        gap: 10px; /* Reducir el espacio entre columnas */
+    }
+    .form-fichas-col1,
+    .form-fichas-col2 {
+        flex: none; /* Desactivar el crecimiento flexible para columnas en pantallas pequeñas */
+        width: 100%; /* Asegurar que las columnas ocupen el 100% del ancho */
+    }
+    .formularioFichasInstructor input[type="text"],
+    .formularioFichasInstructor input[type="date"],
+    .formularioFichasInstructor button {
+        padding: 8px; /* Reducir el padding para inputs y botones en pantallas pequeñas */
+        margin-bottom: 8px; /* Reducir el margen inferior para inputs y botones */
+    }
+    .formularioFichasInstructor label {
+        text-wrap: nowrap;
+        font-weight: 700;
+    }
+}

@@ -1,0 +1,95 @@
+.Admin-main-box{
+  margin-top: 120px;
+  padding-top: 20px;
+}
+/* Agrega estilos para centrar los botones en la interfaz */
+.contAdmin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh; /* Establece la altura completa de la pantalla */
+}
+  
+/* Estilos en CSS para los icon-box */
+.icon-box {
+  display: inline-block;
+  text-align: center;
+  width: 180px;
+  height: 215px;
+  margin: 25px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  background-color: #ffffff;
+  transition: background-color 0.3s; 
+  border-radius: 5px;
+  box-shadow: 10px 10px 5px -7px rgba(0,0,0,0.75);
+}
+  
+.icon{
+  color: #39a900;
+  position: relative;
+  left: 30px;
+}
+
+.icon-box:hover {
+  background-color: #ccc; 
+}
+  
+  /* Estilos para los textos debajo de los iconos */
+.icon-box span {
+  display: block;
+  margin-top: 5px;
+  font-size: 19px;
+  font-weight: bold; 
+  color: #333; 
+}
+
+.titulo-panel {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 24px; /* Ajusta el tamaño de fuente según tus preferencias */
+  color: #333; /* Ajusta el color del texto según tu diseño */
+  font-weight: bold; /* Texto en negrita, ajusta según tus preferencias */
+}
+
+@media (max-width: 480px) {
+  .Admin-main-box{
+    margin-top: 90px;
+    padding-top: 20px;
+  }
+
+  .contenedor-admin{
+    width: 300px;
+    position: relative;
+    left: 0px;
+    top: 225px;
+  }
+
+  .titulo-panel {
+    margin-bottom: 30px; 
+    font-size: 27px;
+    position: relative;
+    top: 10px;
+  }
+
+  .icon-box {
+    display: inline-block;
+    text-align: center;
+    margin: 25px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    background-color: #ffffff;
+    transition: background-color 0.3s; 
+    border-radius: 5px;
+    position: relative;
+    left: 40px;
+    top: -20px;
+  }
+
+  .icon{
+    position: relative;
+    left: 30px;
+  }
+}
+
+

@@ -1,0 +1,55 @@
+.AprendizForm-main-box{
+  position: relative;
+  bottom: 3rem;
+}
+
+.contenedor-formulario {
+  max-width: 600px; /* Ancho máximo del contenedor */
+  width: 100%; /* Hacer que el contenedor ocupe todo el ancho disponible */
+  margin: 20px auto; /* Margen superior e inferior de 20px y centrado horizontal */
+  padding: 20px; /* Espaciado interno del contenedor */
+  border: 1px solid #ccc; /* Borde del contenedor */
+  border-radius: 5px; /* Bordes redondeados */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra del contenedor */
+  display: flex; /* Mostrar los elementos en línea (en una sola columna) */
+  flex-direction: column; /* Establecer la dirección de los elementos en columna */
+  align-items: center; /* Centrar los elementos horizontalmente */
+  margin-top: 70%;
+  position: relative;
+  top: 290px;
+}
+
+.contenedor-formulario p{
+  color: #000000;
+  font-weight: 400;
+}
+
+.formulario-aprendiz input::placeholder {
+  color: #000000; /* Reemplaza 'yourColor' con el color que desees */
+}
+
+.titulo-aprendiz{
+  font-size: 30px;
+}
+
+.formulario-aprendiz {
+  max-width: 500px; /* Ancho máximo del formulario */
+  margin: 0 auto; /* Centra el formulario horizontalmente */
+  padding: 20px; /* Espaciado interno del formulario */
+}
+
+/* Estilos para los inputs */
+.formulario-aprendiz input, select {
+  width: 100%; /* Ancho completo del input */
+  margin-bottom: 10px; /* Espaciado entre inputs */
+  padding: 10px; /* Espaciado interno del input */
+  border: 1px solid #ccc; /* Borde del input */
+  border-radius: 5px; /* Bordes redondeados */
+}
+
+@media screen and (max-width: 480px) {
+  .AprendizForm-main-box{
+    position: relative;
+    top: 24rem;
+  }
+}

@@ -1,0 +1,211 @@
+/* Estilos existentes */
+.list-aprendices-box {
+    margin-top: 30px;
+    padding-top: 20px;
+    display: flex;
+    padding: 8px;
+}
+
+.list-aprendices-box > div {
+    padding: 8px;
+}
+
+.list-col1 {
+    margin-left: 3rem;
+    margin-right: 15%;
+    position: relative;
+    left: 4%;
+}
+
+.list-title {
+    text-align: center;
+    font-size: 25px;
+}
+
+/* Para permitir el desplazamiento interno */
+.list-col2 {
+    width: 45%;
+    background-color: #f1EEEE;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0.1, 0.1, 0.1, 0.2);
+    overflow: hidden;
+}
+
+.list-col2 > div {
+    border-radius: 8px;
+    background-color: #fff;
+    height: 100%;
+    padding: 8px;
+    margin-bottom: 1rem;
+    max-height: 70vh; /* Ajusta la altura máxima */
+    overflow-y: scroll;
+}
+
+/* Ocultar la barra de desplazamiento en navegadores Webkit (Chrome, Safari) */
+.list-col2 > div::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
+/* Ocultar la barra de desplazamiento en navegadores de Mozilla (Firefox) */
+.list-col2 > div {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+}
+
+.list-col2 > div::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
+}
+
+.list-col2 > div > label {
+    font-weight: 600;
+}
+
+/* Nuevos estilos para la lista de aprendices con scroll oculto */
+.lista-aprendices-container {
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+.lista-aprendices-container::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
+.lista-aprendices-container {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+}
+
+.lista-aprendices-container::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
+}
+
+.lista-aprendices {
+    text-wrap: nowrap;
+    list-style: none;
+    padding: 0;
+    margin: 25px auto;
+    width: 100%;
+    background-color: #f1EEEE;
+    box-shadow: 0 0 8px rgba(0.1, 0.1, 0.1, 0.2);
+    padding: 6px;
+}
+
+.aprendices-fichas {
+    border-bottom: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+    padding: 3px;
+    display: flex;
+    background-color: #fff;
+    height: 60px;
+}
+
+.aprendices-fichas:hover {
+    cursor: pointer;
+    transform: scaleY(1.1);
+    margin-bottom: 10px;
+    background-color: #f1f1f1;
+}
+
+.aprendices-fichas:last-child:hover {
+    margin-top: 10px;
+}
+
+.agendarVisita {
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #39a900;
+    color: #fff;
+    margin-right: 9px;
+}
+
+.agendarVisita:hover {
+    background-color: #277102;
+    padding: 8px;
+    color: #fff;
+}
+
+.user-info {
+    font-size: 22px;
+}
+
+.user-icon {
+    color: #39a900;
+    position: relative;
+    top: 5px;
+    margin-right: 10px;
+}
+
+/* Estilos para dispositivos móviles */
+@media screen and (max-width: 480px) {
+    .list-aprendices-box {
+        margin-top: 20px;
+        padding-top: 20px;
+        display: block;
+        position: relative;
+        right: 0%;
+    }
+
+    .list-col1 {
+        margin: 0 auto;
+        width: 100%;
+        padding: 0 8px;
+    }
+
+    .list-col2 {
+        width: 100%;
+        margin-top: 20px;
+        padding: 0 8px;
+    }
+
+    .lista-aprendices {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        box-shadow: none;
+        background-color: transparent;
+        position: relative;
+        right: 1rem;
+        margin-top: 1rem;
+    }
+
+    .aprendices-fichas {
+        padding: 10px;
+        font-size: 18px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .aprendices-fichas:hover {
+        transform: none;
+        margin-bottom: 0;
+        background-color: #fff;
+    }
+
+    .agendarVisita {
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    .user-info {
+        font-size: 18px;
+    }
+
+    .user-icon {
+        position: static;
+        margin-right: 5px;
+    }
+
+    .list-title {
+        font-size: 20px;
+    }
+
+    .list-col2 > div {
+        padding: 16px;
+        margin-bottom: 20px;
+    }
+}

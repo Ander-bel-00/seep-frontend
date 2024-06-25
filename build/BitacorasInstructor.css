@@ -1,0 +1,262 @@
+.instru-bitacoras-box {
+  margin-top: 130px;
+  padding-top: 20px;
+}
+/* Estilos generales para la tabla */
+.docsTab-bitacoras {
+  position: relative;
+  left: 8%;
+  width: 90%;
+  border-collapse: collapse;
+  border-radius: 2px;
+  box-shadow: 1px 1px 1px 2px rgba(0.3, 0.3, 0.3, 0.2);
+}
+
+.docsTab-bitacoras .tr:nth-child(even) {
+  background-color: #f2f2f2; /* Gris claro */
+}
+
+.docsTab-bitacoras .tr:hover{
+  background-color: #ddd; /* Gris más oscuro */
+  cursor: pointer;
+}
+
+.th,
+.td-instru {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+.th {
+  background-color: #04324D;
+  color: #fff;
+}
+
+.btnAgregarObservacion {
+  margin-bottom: 10px;
+}
+
+.bitacoras-actions{
+  display: flex;
+  flex-direction: row;
+  padding: 8px;
+}
+
+.bitacoras-actions > div {
+  margin-right: 1rem;
+}
+
+.bitacoras-actions > div > button {
+  color: #39a900;
+  font-size: 25px;
+  position: relative;
+}
+
+.bitacoras-actions > div > button:hover{
+  transform: scale(1.2);
+}
+
+.Modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+}
+
+.Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Estilos para el botón dentro del modal de enviar observación */
+.modal-content .btnEnviar {
+  background-color: #39a900; /* Color de fondo del botón */
+  color: white; /* Color del texto del botón */
+  padding: 10px 20px; /* Espacio interno del botón */
+  border: none; /* Eliminar borde */
+  border-radius: 5px; /* Redondear esquinas */
+  cursor: pointer; /* Cambiar el cursor al pasar sobre el botón */
+  margin-top: 10px; /* Espacio superior */
+}
+
+.modal-content .btnEnviar:hover {
+  background-color: #2e7d32; /* Cambiar color de fondo al pasar sobre el botón */
+}
+
+/* Estilos para el contenedor de los botones */
+.button-container {
+  margin-top: 30px; /* Espacio entre el textarea y los botones */
+}
+
+.button-container button {
+  margin-right: 5px; /* Espacio entre los botones */
+}
+
+.Search-biatcorasInstructor-box {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  left: 8%;
+  width: 80%;
+}
+
+.Search-biatcorasInstructor-box > p {
+  font-weight: 600;
+}
+
+.Search-biatcorasInstructor-box > p > input {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin-left: 1rem;
+  padding: 8px;
+  background-color: #f5f5f5;
+}
+
+.Search-biatcorasInstructor-box > p > input:focus{
+  background-color: #fff;
+}
+
+/* Media query para dispositivos móviles */
+@media screen and (max-width: 480px) {
+  .instru-bitacoras-box {
+    margin-top: 130px;
+    padding-top: 20px;
+    position: relative;
+    right: 7%;
+  }
+  /* Estilos generales para la tabla */
+  .docsTab-bitacoras {
+    width: 98%;
+    border-collapse: collapse;
+  }
+
+  /* Ocultar la tabla encabezados y mostrar celdas como bloques */
+  .docsTab-bitacoras,
+  .Thead,
+  .tbody,
+  .th,
+  .td-instru,
+  .tr {
+    display: block;
+  }
+
+  /* Ocultar encabezados */
+  .Thead .tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  /* Establecer el ancho de las celdas */
+  .td-instru {
+    width: 100%;
+  }
+
+  /* Estilizar las filas */
+  .tr {
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ddd; /* Agregar borde inferior a cada fila */
+    padding-bottom: 10px; /* Espacio entre filas */
+  }
+
+  /* Establecer estilos para las celdas */
+  .td-instru {
+    border: none;
+    position: relative;
+    padding-left: 55%;
+  }
+
+  /* Establecer estilos para los encabezados en dispositivos móviles */
+  .td-instru:before {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    width: 45%; /* Ancho relativo a la tabla */
+    padding-right: 10px; /* Espacio entre el contenido y el borde */
+    white-space: nowrap; /* Evitar que el texto se divida en varias líneas */
+  }
+
+  /* Establecer estilos para el contenido en dispositivos móviles */
+  .td-instru:nth-of-type(1):before {
+    content: "Número de bitácora:";
+  }
+  .td-instru:nth-of-type(2):before {
+    content: "N° veces cargada:";
+  }
+  .td-instru:nth-of-type(3):before {
+    content: "Número de Documento:";
+  }
+  .td-instru:nth-of-type(4):before {
+    content: "Nombres:";
+  }
+  .td-instru:nth-of-type(5):before {
+    content: "Apellidos:";
+  }
+  .td-instru:nth-of-type(6):before {
+    content: "Número de Ficha:";
+  }
+  .td-instru:nth-of-type(7):before {
+    content: "Programa de Formación:";
+  }
+  .td-instru:nth-of-type(8):before {
+    content: "Observaciones:";
+  }
+  .td-instru:nth-of-type(9):before {
+    content: "Estado:";
+  }
+  .td-instru:nth-of-type(10):before {
+    content: "Acciones:";
+  }
+
+  .bitacoras-actions{
+    display: flex;
+    flex-direction: row;
+    padding: 2px;
+  }
+  
+  .bitacoras-actions > div {
+    margin-right: 1rem;
+  }
+
+  .Search-biatcorasInstructor-box {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    left: 8%;
+    width: 100%;
+    margin-left: 10px;
+  }
+
+  .Search-biatcorasInstructor-box > p > input {
+    position: relative;
+    right: 6%;
+    width: 100%;
+  }
+
+  .docsTab-bitacoras .tr:nth-child(even) {
+    background: none; /* Gris claro */
+  }
+  
+  .docsTab-bitacoras .tr:hover{
+    background: none; /* Gris más oscuro */
+    cursor: pointer;
+  }
+}

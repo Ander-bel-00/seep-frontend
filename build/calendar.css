@@ -1,0 +1,192 @@
+.calendar-container {
+  position: relative;
+  left: 8rem;
+  top: 0rem;
+  max-width: 80%;
+  height: 80vh;
+}
+
+/* Estilos para la vista mensual del calendario */
+.rbc-month-view {
+  border-radius: 10px; /* Radio de borde */
+  overflow: hidden; /* Asegura que los bordes redondeados se apliquen correctamente */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+.calendar-container .rbc-event{
+  background-color: #39a900;
+  color: #fff;
+}
+
+.modal-title {
+  text-align: center; /* Centra el texto en todos los dispositivos */
+}
+
+.back__button-calendar{
+  position: relative;
+  left: 1rem;
+  top: 1rem;
+  width: 5%;
+}
+
+.back__button-calendar .Regresar-calendar{
+  color: #39a900;
+  font-size: 20px;
+  padding: 8px;
+  width: 1rem;
+}
+.back__button-calendar:hover{
+  border-bottom: 10px;
+  transform: scale(1.2);
+}
+
+.modal-calendar-content{
+  position: relative;
+  bottom: 4rem;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Color oscuro con opacidad */
+  z-index: 1000; /* Asegura que esté por encima del modal */
+}
+
+
+.modal-title{
+  position: relative;
+
+}
+
+.modal-calendario{
+  width: 100%;
+}
+
+.info-modal-calendar{
+  display: flex;
+  flex-direction: row;
+}
+
+.info-modal-calendar h2{
+  font-size: 19px;
+  border-bottom: 1px solid #ccc;
+}
+
+.info-modal-calendar__col1{
+  width: 50%;
+  border-right: 2px solid #ccc;
+  margin-right: 1rem;
+  padding: 15px;
+  text-wrap: wrap;
+}
+
+.info-modal-calendar__col1 div {
+  margin-bottom: 0.4rem;
+}
+
+.info-modal-calendar__col2{
+  width: 50%;
+  padding: 15px;
+}
+
+.info-modal-calendar__col2 div {
+  margin-bottom: 0.4rem;
+}
+
+/* Modal General */
+.modal-delete-visit {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content-visit-delete {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.modal-delete-visit h2 {
+  margin-bottom: 15px;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.modal-actions button {
+  margin-left: 10px;
+}
+
+/* Input Fields */
+.modal-content-visit-delete label {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.modal-content-visit-delete input[type="text"],
+.modal-content-visit-delete input[type="date"],
+.modal-content-visit-delete input[type="time"],
+.modal-content-visit-delete textarea {
+  width: calc(100% - 20px);
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+/* Textarea */
+.modal-content-visit-delete textarea {
+  height: 100px;
+  resize: vertical;
+}
+
+.btn-close-delet-modal{
+  background-color: #39a900;
+  color: #fff;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.btn-close-delet-modal:hover{
+  background-color: #2f8901;
+}
+
+
+/* Celulares con breakpoint de 480px */
+
+/* Estilos específicos para dispositivos móviles con ancho de pantalla hasta 480px */
+@media screen and (max-width: 480px) {
+  .calendar-container {
+    left: -6%;
+    top: 3rem;
+    width: 100%;
+    max-width: none; /* Ajuste para ocupar todo el ancho disponible */
+    height: 90vh;
+  }
+
+  .back__button-calendar {
+    left: -2rem;
+    top: 2rem;
+  }
+
+  .modal-title {
+    text-align: left;
+  }
+}

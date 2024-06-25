@@ -1,0 +1,311 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.login-body{
+    background-color: #F5F5F5;
+    height: 100vh;
+}
+
+.header-login{
+    display: flex;
+    justify-content: space-between;
+    height: 15%;
+    width: 100%;
+    background-color: #fff;
+    border-bottom: 10px solid #39a900;
+}
+
+.sena-verde{
+    width: 4rem;
+    height: 4rem;
+    position: relative;
+    top: 0.5rem;
+    margin-left: 1rem;
+}
+
+.cditi-title{
+    position: relative;
+    left: 1rem;
+    top: 2rem;
+    font-size: 14px;
+}
+
+.sena-medio{
+    width: 16rem;
+    height: 16rem;
+    position: relative;
+    bottom: 4.3rem;
+    left: 5rem;
+}
+
+.main-login-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 80vh;
+    background-color: #F5F5F5;
+}
+
+.form-login-content{
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 22rem;
+    height: 80%;
+}
+
+.form-login-content-label{
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    position: relative;
+    left: 2rem;
+    top: 2rem;
+}
+
+.form-login-content-input{
+    width: 15rem;
+    background-color: #E7E7E7;
+    border-radius: 10px;
+    padding: 1rem;
+    position: relative;
+    left: 2rem;
+    top: 2rem;
+}
+
+.form-login-content-forget{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #39a900;
+    padding: 5px;
+    text-decoration: none;
+    position: relative;
+    top: 3rem;
+}
+
+.form-login-content-forget:hover{
+    text-decoration: underline;
+}
+
+.form-login-content-btn-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+}
+
+.form-login-content-loginBtn{
+    display: initial;
+    background: #39a900;
+    color: #fff;
+    padding: 13px;
+    border-radius: 8px;
+    position: relative;
+    top: 3rem;
+}
+
+.form-login-content-loginBtn:hover{
+    background-color: #318f02;
+}
+
+.form-login-content-errors{
+    display: block;
+    position: relative;
+    top: 2rem;
+    left: 1rem;
+}
+
+.form-login-content-loginBtn.btn-with-errors {
+    margin-top: 1rem;
+    top: 2rem; /* Ajusta la posición según sea necesario */
+}
+  
+
+.piePagina{
+    position: fixed;
+    bottom: 0;
+}
+
+@media screen and (min-width: 1272px) {
+    .form-login-content-forget{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: #39a900;
+        padding: 5px;
+        text-decoration: none;
+        position: relative;
+        top: 2rem;
+    }
+    .form-login-content{
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 22rem;
+        height: 90%;
+    }
+
+    .form-login-content-loginBtn.btn-with-errors {
+        margin-top: 1rem;
+        top: 1rem; /* Ajusta la posición según sea necesario */
+    }
+    
+}
+
+@media screen and (min-width: 1358px) {
+    .form-login-content{
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 22rem;
+        height: 80%;
+    }
+    
+    .form-login-content-label{
+        font-weight: 400;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        position: relative;
+        left: 2rem;
+        top: 2rem;
+    }
+    
+    .form-login-content-input{
+        width: 15rem;
+        background-color: #E7E7E7;
+        border-radius: 10px;
+        padding: 1rem;
+        position: relative;
+        left: 2rem;
+        top: 2rem;
+    }
+    
+    .form-login-content-forget{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: #39a900;
+        padding: 5px;
+        text-decoration: none;
+        position: relative;
+        top: 3rem;
+    }
+    
+    .form-login-content-forget:hover{
+        text-decoration: underline;
+    }
+    
+    .form-login-content-btn-box{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 8px;
+    }
+    
+    .form-login-content-loginBtn{
+        display: initial;
+        background: #39a900;
+        color: #fff;
+        padding: 13px;
+        border-radius: 8px;
+        position: relative;
+        top: 3rem;
+    }
+    
+    .form-login-content-loginBtn:hover{
+        background-color: #318f02;
+    }
+    
+    .form-login-content-errors{
+        display: block;
+        position: relative;
+        top: 2rem;
+        left: 1rem;
+    }
+    
+    .form-login-content-loginBtn.btn-with-errors {
+        margin-top: 1.3rem;
+        top: 1rem; /* Ajusta la posición según sea necesario */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .sena-verde{
+        margin-top: 5px;
+        width: 4rem;
+        height: 4rem;
+    }
+    .sena-medio{
+        position: relative;
+        left: -4rem;
+    }
+    .cditi{
+        display: none;
+    }
+
+    .form-login-content{
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 18rem;
+        height: 25rem;
+    }
+
+    .form-login-content-label{
+        font-weight: 400;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        position: relative;
+        left: 1rem;
+        top: 2rem;
+    }
+    
+    .form-login-content-input{
+        width: 13rem;
+        background-color: #E7E7E7;
+        border-radius: 10px;
+        padding: 8px;
+        position: relative;
+        left: 1rem;
+        top: 2rem;
+    }
+
+    .cditi-title{
+        position: relative;
+        left: -1rem;
+        font-size: 15px;
+        top: 1rem;
+    }
+
+    .logo-seep{
+        width: 12rem;
+        height: 14rem;
+        position: relative;
+        bottom: 3.5rem;
+    }
+
+    .welcome-title{
+        position: relative;
+        top: 1rem;
+    }
+
+    .form-login-content-errors{
+        position: relative;
+        top: 2.1rem;
+        left: 0rem;
+    }
+}

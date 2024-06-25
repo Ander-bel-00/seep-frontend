@@ -1,0 +1,144 @@
+.sidenavAdmin{
+    width: 70px;
+    height: 100vh;
+    position: fixed;
+    top: 15%;
+    left: 0;
+    padding: 20px;
+    background: #00324d;
+    overflow-y: auto;
+    z-index: 1000;
+}
+
+/* Estilos adicionales para la lista de enlaces */
+.sidenavAdmin ul {
+    padding: 0px;
+    margin: 0;
+    list-style: none;
+    position: relative;
+    right: 20px;
+    top: -10px;
+}
+
+.sidenavAdmin ul li {
+    width: 90px;
+}
+    
+.sidenavAdmin ul li a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 9%;
+    padding-right: 30px;
+    border-radius: 6px;
+    transition: background-color 0.3s;
+}
+  
+.sidenavAdmin ul li a:hover,
+.sidenavAdmin ul li a:active {
+    background: #787a7a4d;
+    color: #fff;
+}
+
+/* Estilos para el componente hovered-options */
+.hovered-options {
+    position: fixed;
+    /* Ajusta el margen superior para desplazar hacia abajo el texto del hover */
+    top: 80px; /* Por ejemplo, puedes probar con 80px */
+    left: calc(70px + 20px); /* 70px del menú + 20px de padding */
+    transform: translateY(-50%);
+    z-index: 1001;
+}
+  
+/* Estilos para el texto dentro de hovered-options */
+.hovered-text {
+    background-color: #00324d;
+    color: #fff;
+    padding: 8px;
+    border-radius: 4px;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+    
+/* Estilos para el contenedor que envuelve al icono y al <li> */
+.menu-option-wrapper {
+    display: inline-block;
+    padding: 8px;
+}
+
+@media screen and (max-width: 480px) {
+    /* Estilos para el menú hamburguesa */
+    .sidenav {
+      width: 210px;
+      height: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      padding: 30px;
+      background: #00324D;
+      overflow-y: auto;
+      z-index: 1000;
+      transition: transform 0.3s ease-in-out;
+      transform: translateX(-100%);
+    }
+  
+    .active {
+      transform: translateX(0);
+    }
+    .menu-burguer {
+      display: inline-block;
+      font-size: 35px;
+      position: relative;
+      left: -28px;
+      color: #fff;
+    }
+  
+    .menu-burguer:hover {
+      cursor: pointer;
+    }
+  
+    .sidenav .close-btn {
+      display: block;
+      position: relative;
+      left: 150px;
+      top: -25px;
+      padding: 9px;
+      font-size: 20px;
+      color: #fff;
+    }
+  
+    /* Estilos adicionales para la lista de enlaces */
+    .sidenav ul {
+      padding: 0px;
+      margin: 0;
+      list-style: none;
+      position: relative;
+      right: 20px;
+      top: 0px;
+    }
+    .userWelcome {
+      color: #fff;
+    }
+  
+    .sidenav ul li a {
+      display: block;
+      color: #fff;
+      text-decoration: none;
+      font-size: 20px;
+      padding: 15px 14px;
+      border-radius: 6px;
+      transition: background-color 0.3s;
+    }
+  
+    .sidenav ul li a:hover,
+    .sidenav ul li a:active {
+      background: #787a7a4d;
+      color: #fff;
+    }
+  
+    .sidenavAdmin {
+      display: none;
+    }
+  }
+  

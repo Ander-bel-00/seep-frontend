@@ -1,0 +1,234 @@
+.main-ins-bitacoras{
+  margin-top: 130px;
+  padding-top: 20px;
+}
+
+/* Estilos generales para la tabla */
+.docsTab{
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 2px;
+  box-shadow: 1px 1px 1px 2px rgba(0.3, 0.3, 0.3, 0.2);
+}
+
+.docsTab .tr:nth-child(even) {
+  background-color: #f2f2f2; /* Gris claro */
+}
+
+.docsTab .tr:hover{
+  background-color: #ddd; /* Gris más oscuro */
+  cursor: pointer;
+}
+
+.th-docs, .td {
+  text-align: left;
+  padding: 8px;
+}
+
+.th-docs {
+  border: 1px solid #dddddd;
+  background-color: #04324D;
+  color: #fff;
+}
+
+.td{
+  border: 1px solid #ccc;
+}
+
+.btnDownloadInstruc{
+  color: #39a900;
+  font-size: 22px;
+}
+
+.btnDownloadInstruc:hover{
+  transform: scale(1.2);
+}
+
+/* Estilos para el tooltip */
+.download-tooltip {
+  position: absolute;
+  bottom: -30px; /* Ajusta según sea necesario para la separación deseada */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 12px;
+  white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+  pointer-events: none; /* Evita que el tooltip afecte los eventos del botón */
+  z-index: 1000;
+}
+
+.Search-documents-box{
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: row;
+}
+
+.Search-documents-box > p  {
+  font-weight: 600;
+}
+
+.Search-documents-box > p > input {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin-left: 1rem;
+  padding: 8px;
+  background-color: #f5f5f5;
+}
+
+.Search-documents-box > p > input:focus {
+  background-color: #fff;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.pagination-button {
+  background-color: #39a900;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 0 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.pagination-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.pagination span {
+  margin: 0 10px;
+  font-weight: bold;
+}
+
+
+/* Media query para dispositivos móviles */
+@media screen and (max-width: 480px) {
+  .documents-main-cont{
+    position: relative;
+    left: 0.25rem;
+  }
+  .main-ins-bitacoras{
+    margin-top: 130px;
+    padding-top: 20px;
+    width: 396px;
+  }
+  .Search-documents-box{
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .Search-documents-box > p > input {
+    position: relative;
+    right: 6%;
+    width: 95%;
+  }
+
+  .div-docs-instruc{
+    position: relative;
+    left: -0.27rem;
+  }
+
+  .docsTab {
+    width: 95%;
+    position: relative;
+    left: 1%;
+  }
+  .docsTab .tr:nth-child(even) {
+    background: none;
+  }
+  
+  .docsTab .tr:hover{
+    background: none;
+    cursor: pointer;
+  }
+  /* Ocultar la tabla encabezados y mostrar celdas como bloques */
+  .docsTab, .Thead, .tbody, .th, .td, .tr { 
+    display: block; 
+  }
+
+  /* Ocultar encabezados */
+  .Thead .tr { 
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  /* Establecer el ancho de las celdas */
+  .td { 
+    width: 100%; 
+  }
+
+  /* Estilizar las filas */
+  .tr { 
+    margin-bottom: 15px; 
+    border-bottom: 1px solid #ddd; /* Agregar borde inferior a cada fila */
+    padding-bottom: 10px; /* Espacio entre filas */
+  }
+
+  /* Establecer estilos para las celdas */
+  .td { 
+    border: none;
+    position: relative;
+    padding-left: 50%; 
+  }
+
+  /* Establecer estilos para los encabezados en dispositivos móviles */
+  .td:before { 
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    width: 45%; /* Ancho relativo a la tabla */
+    padding-right: 10px; /* Espacio entre el contenido y el borde */
+    white-space: nowrap; /* Evitar que el texto se divida en varias líneas */
+  }
+
+  /* Establecer estilos para el contenido en dispositivos móviles */
+  .td:nth-of-type(1):before { content: "Tipo de archivo:"; }
+  .td:nth-of-type(2):before { content: "Documento de Aprendiz: "; }
+  .td:nth-of-type(3):before { content: "Nombres:"; }
+  .td:nth-of-type(4):before { content: "Apellidos:"; }
+  .td:nth-of-type(5):before { content: "Número de Ficha:"; }
+  .td:nth-of-type(6):before { content: "Programa de Formación:"; }
+  .td:nth-of-type(7):before { content: "Acciones:"; }
+
+}
+
+@media screen and (min-width: 1024px) {
+  .main-ins-bitacoras{
+    margin-top: 130px;
+    padding-top: 20px;
+  }
+  /* Estilos generales para la tabla */
+  .docsTab {
+    width: 90%;
+    border-collapse: collapse;
+    position: relative;
+    left: 7%;
+  }
+
+  .Search-documents-box{
+    width: 1230px;
+    position: relative;
+    left: 7%;
+  }
+}
+
+@media screen and (min-width: 1272px) {
+  .Search-documents-box{
+    width: 1150px;
+    position: relative;
+    left: 7%;
+  }
+}

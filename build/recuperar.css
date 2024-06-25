@@ -1,0 +1,177 @@
+.inicio-box-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.recuperar-box-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4%;
+}
+
+.inicio-box-main > a {
+  color: #39a900;
+  font-size: 22px;
+  text-decoration: none;
+  padding: 8px;
+}
+
+.link-home:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+/* Estilos para el contenedor principal del componente */
+.recupera-contrasena-container {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #ffff;
+  width: 40%;
+}
+
+/* Estilos para el título "Recupera tu contraseña" */
+.recupera-titulo {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+/* Estilos para los mensajes de éxito y error */
+.recupera-mensaje {
+  margin-bottom: 10px;
+  color: #ff0000; /* Color rojo para los mensajes de error */
+}
+
+/* Estilos para el formulario de solicitud de código de verificación */
+.recupera-formulario,
+.recupera-cambio-formulario {
+  margin-bottom: 20px;
+}
+
+/* Estilos para los inputs en el formulario */
+.recupera-input,
+.recupera-cambio-input {
+  width: calc(
+    100% - 22px
+  ); /* Ajusta el ancho del input al 100% del contenedor menos el padding */
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #e7e7e7;
+}
+
+/* Estilos para el botón de solicitud de código de verificación */
+.recupera-boton,
+.recupera-cambio-boton {
+  padding: 10px 20px;
+  background-color: #39a900; /* Color azul para el botón */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.recupera-boton:hover {
+  background-color: #389e04;
+}
+
+/* Estilos para el contenedor del código de verificación */
+.recupera-codigo-container {
+  margin-bottom: 20px;
+}
+
+/* Estilos para los inputs del código de verificación */
+.recupera-codigo-input {
+  width: 40px;
+  margin-bottom: 10px;
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Estilos para el botón de verificación de código */
+.recupera-verificar-boton {
+  margin-bottom: 10px;
+  padding: 10px 20px;
+  background-color: #28a745; /* Color verde para el botón */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Estilos para el indicador de carga */
+.loader {
+  border: 4px solid #f3f3f3; /* Light grey */
+  border-top: 4px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 1s linear infinite; /* Animación de rotación */
+  margin: 0 auto; /* Centra el indicador de carga horizontalmente */
+}
+
+/* Animación de rotación */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .inicio-box-main {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    left: 8rem;
+  }
+  
+  
+  .recuperar-box-main, .inicio-box-main {
+    flex-direction: column;
+    align-items: stretch;
+    margin-top: 20px;
+  }
+
+  .recupera-contrasena-container {
+    width: 90%;
+    margin: 10px auto;
+    padding: 15px;
+  }
+
+  .recupera-titulo {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .recupera-input,
+  .recupera-cambio-input {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  .recupera-boton,
+  .recupera-cambio-boton,
+  .recupera-verificar-boton {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  .recupera-codigo-input {
+    width: 60px;
+    padding: 10px;
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,194 @@
+.titulo-fichas {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 25px;
+}
+
+.instructor-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-container-instructor > form {
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.form-container-instructor > form > input,
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-container-instructor {
+  max-width: 1900px;
+  width: 550px;
+  position: relative;
+  top: 3rem;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 2px 2px 19px 10px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 2px 2px 19px 10px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 2px 2px 19px 10px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+}
+
+
+.form-label {
+  margin-bottom: 0.5rem;
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.form-container-instructor input[name="fichas_asignadas"]::placeholder {
+  color: #454444; /* Cambia el color del placeholder a gris */
+}
+
+.form-control:focus {
+  border-color: #80bdff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+
+.btn-instructor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%; /* Ancho completo del botón */
+  padding: 10px; /* Espaciado interno del botón */
+  background-color: #39a900; /* Color de fondo del botón */
+  color: #fff; /* Color del texto del botón */
+  border: none; /* Borde del botón */
+  border-radius: 5px; /* Bordes redondeados */
+  cursor: pointer; /* Cursor al pasar sobre el botón */
+}
+  
+
+.btn-instructor:hover {
+  background-color: #2e8901; /* Color de fondo del botón */
+  cursor: pointer; /* Cursor al pasar sobre el botón */
+}
+
+/* Estilos personalizados para el modal */
+.react-modal-custom {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  max-width: 80%;
+  max-height: 80%;
+  overflow: auto;
+}
+
+.react-modal-custom h2 {
+  margin-top: 0;
+}
+
+.react-modal-custom button {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.react-modal-custom button:hover {
+  background-color: #0056b3;
+}
+
+/* Estilos para los checkboxes dentro del modal */
+.react-modal-custom input[type="checkbox"] {
+  /* Estilo para el checkbox normal */
+  width: 20px; /* Ancho del checkbox */
+  height: 20px; /* Altura del checkbox */
+  margin-right: 5px; /* Margen derecho para separar el checkbox del texto */
+}
+
+/* Estilo para los checkboxes seleccionados */
+.react-modal-custom input[type="checkbox"]:checked {
+  background-color: #007bff !important; /* Color de fondo cuando está marcado */
+  color: #fff !important; /* Color del texto cuando está marcado */
+}
+
+@media screen and (max-width: 480px) {
+  .form-container-instructor {
+    max-width: 1900px;
+    width: 390px;
+    position: relative;
+    top: 12rem;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .btn-instructor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Ancho completo del botón */
+    padding: 10px; /* Espaciado interno del botón */
+    background-color: #39a900; /* Color de fondo del botón */
+    color: #fff; /* Color del texto del botón */
+    border: none; /* Borde del botón */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cursor al pasar sobre el botón */
+  }
+    
+  
+  .btn-instructor:hover {
+    background-color: #2e8901; /* Color de fondo del botón */
+    cursor: pointer; /* Cursor al pasar sobre el botón */
+  }
+}
+
+@media screen and (width: 690.91px) {
+  .form-container-instructor {
+    max-width: 1900px;
+    width: 550px;
+    position: relative;
+    top: 300px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .btn-instructor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Ancho completo del botón */
+    padding: 10px; /* Espaciado interno del botón */
+    background-color: #39a900; /* Color de fondo del botón */
+    color: #fff; /* Color del texto del botón */
+    border: none; /* Borde del botón */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cursor al pasar sobre el botón */
+  }
+    
+  
+  .btn-instructor:hover {
+    background-color: #2e8901; /* Color de fondo del botón */
+    cursor: pointer; /* Cursor al pasar sobre el botón */
+  }
+}
