@@ -1,0 +1,188 @@
+.plan-content-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.planEP-container-table {
+  display: grid;
+  width: 980px;
+  grid-template-columns: repeat(8, 1fr); /* Define 8 columnas de igual tamaño */
+  gap: 0px; /* Espacio entre celdas */
+  margin-top: 1rem;
+  position: relative; /* Necesario para que los botones se posicionen correctamente */
+}
+
+.planEP-title{
+  word-spacing: 9px;
+}
+
+.planEP-container-table > div {
+  padding: 2px;
+}
+
+.planEP-title-col, .planEP-secondTitle-col {
+  grid-column: span 8;
+  text-align: center;
+  border-top: 1px solid #000;
+  border-right: 1px solid #000;
+  border-left: 1px solid #000;
+}
+
+.planEP-secondTitle-col {
+  background-color: #dfdede;
+}
+
+.planEP-secondTitle-col h4 {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.planEP-container-table__th {
+  background-color: #dfdede;
+  border-top: 1px solid #000;
+  border-left: 1px solid #000;
+}
+
+.actividades-info-col {
+  grid-column: span 4;
+  grid-row: span 2;
+}
+
+.actividades-info-col > p:first-child {
+  text-align: center;
+  font-weight: 700;
+}
+
+.actividades-info-col > p:last-child {
+  font-weight: 600;
+}
+
+.evidens-info-col {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.evidens-info-col > p:first-child {
+  text-align: center;
+  font-weight: 700;
+  margin-top: 2rem;
+}
+
+.recol-evidens-info-col {
+  grid-column: span 2;
+}
+
+.recol-evidens-info-col, .fecha-info-col, .lugar-info-col > p:first-child {
+  text-align: center;
+  font-weight: 700;
+}
+
+/* Clase para aplicar los bordes finales de la derecha a la tabla */
+.final_border_col {
+  border-right: 1px solid #000;
+}
+
+.final_bottom_border{
+  border-bottom: 1px solid #000;
+}
+
+.planEP-container-table__td {
+  border-top: 1px solid #000;
+  border-left: 1px solid #000;
+}
+
+.planEP-container-table__td input, textarea {
+  width: 100%;
+}
+
+.activi-text-col {
+  grid-column: span 4;
+}
+
+.evidens-text-col {
+  grid-column: span 2;
+}
+
+.observaciones-col {
+  grid-column: span 8;
+  border-top: 1px solid #000;
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.firmas-col{
+  grid-column: span 8;
+}
+
+/* Añadir una clase para ocultar los botones por defecto */
+.action-icons {
+  display: none;
+  gap: 5px;
+  position: absolute;
+  right: 10px; /* Ajusta según sea necesario */
+}
+
+/* Mostrar los botones cuando el cursor está sobre la última columna de la última fila */
+.planEP-container-table__td.final_border_col:hover .action-icons {
+  display: flex;
+}
+
+.add-icon {
+  background-color: #39a900;
+}
+
+.remove-icon {
+  background-color: #ff0000;
+}
+
+.add-icon,
+.remove-icon {
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.add-icon:hover {
+  background-color: #2d8a00;
+}
+
+.remove-icon:hover {
+  background-color: #d30404;
+}
+
+.td__firmas_inputs {
+  display: flex;
+  flex-direction: row;
+  gap: 15rem;
+}
+
+.td__firmas_inputs label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.td__firmas_inputs textarea {
+  border-bottom: 1px solid #ccc;
+}
+
+.btn-add-firma {
+  background-color: #39a900;
+  color: #fff;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.btn-add-firma:hover {
+  background-color: #2d8a00;
+}

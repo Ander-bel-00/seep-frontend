@@ -1,0 +1,31 @@
+.agenda-cell {
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 10px; /* Agrega espacio hacia abajo */
+}
+
+.agenda-cell:hover{
+  transform: scale(1.06);
+}
+
+.agenda-cell strong {
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.multiline {
+  white-space: pre-wrap; /* Permite que el texto se ajuste automáticamente y se rompa en líneas */
+}
+
+.Agenda-Link{
+  text-decoration: none;
+  color: #000;
+}
+
+@media screen and (max-width: 1272px) {
+  .agenda-cell:hover{
+    transform: scale(1.02);
+  }
+}

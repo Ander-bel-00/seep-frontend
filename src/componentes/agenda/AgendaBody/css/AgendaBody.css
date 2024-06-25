@@ -1,0 +1,44 @@
+.agenda-body {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* Distribuir las visitas uniformemente en el contenedor */
+}
+
+.visit {
+  width: calc(33.33% - 20px); /* Ancho de cada visita (3 por fila) con un espacio de 20px entre ellas */
+  margin-bottom: 20px; /* Espacio entre cada fila de visitas */
+  padding: 20px;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+}
+
+@media screen and (max-width: 1272px) {
+  .agenda-body {
+    display: flex;
+    height: 340px;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Distribuir las visitas uniformemente en el contenedor */
+  }
+  .visit {
+    width: calc(33.33% - 20px); /* Ancho de cada visita (3 por fila) con un espacio de 20px entre ellas */
+    margin-bottom: 20px; /* Espacio entre cada fila de visitas */
+    padding: 5px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+  }
+}
+
+/* CSS para dispositivos móviles */
+@media screen and (max-width: 480px) {
+  .agenda-body {
+    display: block; /* Cambiar a bloque para que las visitas se apilen verticalmente */
+  }
+
+  .visit {
+    width: 100%; /* Ocupa todo el ancho disponible */
+    margin-bottom: 20px; /* Espacio entre cada visita */
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+  }
+}

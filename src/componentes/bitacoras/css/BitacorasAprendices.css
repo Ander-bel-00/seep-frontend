@@ -1,0 +1,225 @@
+.bitacoras-aprendizUser-main{
+  margin-top: 120px;
+  padding-top: 20px;
+}
+/* Estilos generales para la tabla */
+.docsAprendicesTab {
+  width: 100%;
+  border-collapse: collapse;
+  box-shadow: 1px 1px 1px 2px rgba(0.3, 0.3, 0.3, 0.2);
+}
+    
+.thh, .td-aprendiz {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+.seletBitacoraNumber{
+  width: 80%;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #EEEEEE;
+  background-color: #EEEEEE;
+  margin-left: 10px;
+}
+
+.thh {
+  background-color: #04324D;
+  color: #fff;
+}
+
+.btn-content{
+  display: flex;  
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+}
+
+.btnDownload{
+  font-size: 22px;
+  color: #39a900;
+  margin-right: 1rem;
+}
+
+.btnActualizar{
+  font-size: 22px;
+  color: #39a900;
+}
+
+.btn-upload-biatcora{
+  background-color: #39a900;
+  color: #fff;
+  padding: 12px;
+  border-radius: 10px;
+}
+
+.btn-upload-biatcora:hover{
+  background-color: #2e8602;
+}
+
+.your-bitacoras-title{
+  color: #39a900;
+}
+
+.modal-bitacoras-aprendiz {
+  width: 60%; /* Ancho personalizado para el modal de actualización */
+  max-width: 500px; /* Ancho máximo del modal */
+  margin: 0 auto; /* Centrar el modal horizontalmente */
+  padding: 20px; /* Espaciado interno del modal */
+  background-color: #fff; /* Color de fondo del modal */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra */
+  margin-top: 150px;
+  padding-top: 20px;
+}
+
+.modal-overlay-bitacoras-aprendiz{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Estilos adicionales para el contenido del modal */
+.modal-bitacoras-aprendiz h2 {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.modal-bitacoras-aprendiz input[type='file'] {
+  margin-top: 10px;
+}
+
+.modal-bitacoras-aprendiz button {
+  background-color: #39a900;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+  left: 85%;
+}
+
+.modal-bitacoras-aprendiz button:hover {
+  background-color: #2e8602;
+}
+
+.tooltip-bitacoras-aprendiz {
+  position: absolute;
+  background-color: #333;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  z-index: 1;
+  bottom: -25px; /* Ajusta esta distancia según sea necesario */
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.btn-content {
+  position: relative;
+  display: inline-block;
+}
+
+.btnDownload,
+.btnActualizar {
+  position: relative;
+  cursor: pointer;
+}
+
+.btnDownload .tooltip-bitacoras-aprendiz,
+.btnActualizar .tooltip-bitacoras-aprendiz {
+  display: none;
+}
+
+.btnDownload:hover .tooltip-bitacoras-aprendiz,
+.btnActualizar:hover .tooltip-bitacoras-aprendiz {
+  display: block;
+}
+
+/* Media query para dispositivos móviles */
+@media screen and (max-width: 480px) {
+  /* Ocultar la tabla encabezados y mostrar celdas como bloques */
+  .docsAprendicesTab, .Thead2, .tbody2, .thh, .td-aprendiz, .trr { 
+    display: block; 
+  }
+
+  .docsAprendicesTab{
+    box-shadow: none;
+  }
+
+  /* Ocultar encabezados */
+  .Thead2 .trr { 
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  
+  /* Establecer el ancho de las celdas */
+  .td-aprendiz { 
+    width: 100%; 
+  }
+
+  /* Estilizar las filas */
+  .trr { 
+    margin-bottom: 15px; 
+    border-top: 1px solid #ddd; /* Agregar borde inferior a cada fila */
+    border-bottom: 1px solid #ddd; /* Agregar borde inferior a cada fila */
+    padding-bottom: 10px; /* Espacio entre filas */
+    box-shadow: 1px 1px 1px 2px rgba(0.3, 0.3, 0.3, 0.2);
+  }
+
+  /* Establecer estilos para las celdas */
+  .td-aprendiz { 
+    border: none;
+    position: relative;
+    padding-left: 50%; 
+  }
+
+  /* Establecer estilos para los encabezados en dispositivos móviles */
+  .td-aprendiz:before { 
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    width: 45%; /* Ancho relativo a la tabla */
+    padding-right: 10px; /* Espacio entre el contenido y el borde */
+    white-space: nowrap; /* Evitar que el texto se divida en varias líneas */
+  }
+
+  /* Establecer estilos para el contenido en dispositivos móviles */
+  .td-aprendiz:nth-of-type(1):before { content: "Número de bitácora:"; }
+  .td-aprendiz:nth-of-type(2):before { content: "Observaciones:"; }
+  .td-aprendiz:nth-of-type(3):before { content: "Estado:"; }
+  .td-aprendiz:nth-of-type(4):before { content: "Acciones:"; }
+
+  /* Excluir los input de tipo archivo de la regla que los oculta */
+  input[type="file"] {
+    display: initial; /* Mostrar los input de tipo archivo */
+  }
+
+  .btnActualizar{
+    color: #39a900;
+  }
+
+  .btnDownload{
+    left: 0px;
+    color: #39a900;
+  }
+
+  .modal-bitacoras-aprendiz{
+    width: 100%;
+    height: 30%;
+  }
+}
+

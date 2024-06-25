@@ -1,0 +1,196 @@
+.segumiento-table-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.spaccing{
+    word-spacing: 9px;
+}
+
+.spaccing-extra{
+    word-spacing: 1cm;
+}
+
+.segumientoEP-content-table{
+    display: grid;
+    width: 980px;
+    grid-template-columns: repeat(8, 1fr); /* Define 8 columnas de igual tamaño */
+    gap: 0px; /* Espacio entre celdas */
+    margin-top: 1rem;
+    position: relative; /* Necesario para que los botones se posicionen correctamente */
+}
+
+.seguimientoEP-title-col{
+    grid-column: span 8;
+    text-align: center;
+    border-top: 1px solid #000;
+    border-right: 1px solid #000;
+    border-left: 1px solid #000;
+}
+
+.segumientoEP-content-table__th {
+    background-color: #dfdede;
+    border-top: 1px solid #000;
+    border-left: 1px solid #000;
+    font-weight: 700;
+    font-size: 13px;
+    padding: 8px;
+}
+
+.segumientoEP-content-table__td {
+    border-top: 1px solid #000;
+    border-left: 1px solid #000;
+    padding: 8px;
+}
+
+.tipoInforme-col, .periodo-evaluado-col{
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.tipoInforme-col > p:first-child{
+    margin-top: 1rem;
+    text-align: center;
+    font-weight: 700;
+}
+
+.periodo-evaluado-col > p:first-child{
+    text-align: center;
+    margin-top: 1rem;
+    font-weight: 700;
+}
+
+.select-typeinfo-col > div:first-child {
+    margin-top: 1rem;
+}
+
+.inicio-period-col {
+    grid-column: span 3;
+    border-right: 1px solid #000;
+}
+
+.seguimientoEP-table textarea {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.factors-col{
+    grid-column: span 8;
+    text-align: center;
+}
+
+.variable-col{
+    grid-row: span 2;
+    text-align: center;
+    font-weight: 700;
+}
+
+.descripcion-col{
+    text-align: center;
+    font-weight: 700;
+    grid-column: span 3;
+    grid-row: span 2;
+}
+.valoracion-col{
+    grid-column: span 2;
+    text-align: center;
+    font-weight: 700;
+}
+
+.obser-col{
+    grid-row: span 2;
+    grid-column: span 2;
+}
+
+.satisfac-col, .porme-col, .obser-col{
+    text-align: center;
+    font-weight: 700;
+
+}
+.selectable-container {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 0.5rem;
+    width: 5rem;
+    height: 1rem;
+}
+
+.selectable-box {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+    position: relative;
+    bottom: 3px;
+}
+
+.selected-box {
+    background-color: lightgray;
+    font-weight: bold;
+}
+
+.input-check-seguimineto{
+    width: 1.1rem;
+    height: 1.2rem;
+    background-color: lightgray;
+}
+
+.relciones-inter-col{
+    font-weight: 700;
+}
+
+.cols-descripcion{
+    grid-column: span 3;
+}
+
+.observaciones-segEP-col{
+    grid-column: span 2;
+    border-right: 1px solid;
+}
+
+.observaciones-segEP-col > textarea {
+    height: 100%;
+}
+.final-bottom-border{
+    border-bottom: 1px solid;
+}
+
+.cols-input {
+    padding: 8px;
+}
+
+.cols-input > input{
+    width: 90%;
+    height: 90%;
+}
+
+.observaciones-ente{
+    border-top: none;
+}
+
+.observaciones-ente > textarea {
+    margin-top: 1rem;
+    border-bottom: 1px solid;
+}
+
+.observaciones-ente, .observaciones-aprendiz {
+    grid-column: span 8;
+    border-right: 1px solid;
+}
+
+.observaciones-aprendiz {
+    border-bottom: 1px solid;
+    
+}
+
+.observaciones-aprendiz > textarea {
+    margin-top: 1rem;
+    border-bottom: 1px solid;
+}

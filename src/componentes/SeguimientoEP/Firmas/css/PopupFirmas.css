@@ -1,0 +1,155 @@
+/* PopupFirmas.css */
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.firma-item {
+  margin: 10px;
+  cursor: pointer;
+  width: 100px;
+  height: 50px;
+  border-bottom: 1px solid #000;
+}
+
+.firma-item-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 10px;
+}
+
+
+.button-firmas-container {
+  display: flex;
+  align-items: center;
+  margin-top: 5px; /* Ajusta este valor según sea necesario */
+  border-bottom: 1px solid;
+  padding: 3px;
+}
+
+
+.btn-edit-firma,
+.btn-delete-firma {
+  background-color: transparent;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 5px 10px;
+  margin-right: 5px;
+  border-radius: 5px;
+}
+
+.btn-edit-firma {
+  background-color: blue;
+}
+
+.btn-edit-firma:hover{
+  background-color: rgb(3, 3, 206);
+}
+
+.btn-delete-firma {
+  background-color: red;
+}
+
+.btn-delete-firma:hover{
+  background-color: rgb(186, 6, 6);
+}
+
+.firma-draw {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sigCanvas {
+  border: 1px solid #000;
+  border-radius: 8px;
+}
+
+.modal-firmas {
+  position: absolute;
+  top: 56%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 700px;
+  background: #fff;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  outline: none;
+  border-radius: 10px;
+}
+
+.modal-overlay-firmas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content-firmas {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.firmas-list-container {
+  position: relative;
+  right: 0.8rem;
+  max-width: 200px;
+  max-height: calc(100vh - 200px);
+  overflow-y: auto;
+  margin-right: 20px;
+  border-right: 1px solid #000;
+  padding: 4px;
+}
+
+.firmas-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.td__firmas_inputs img {
+  width: 120px;
+  height: 50px;
+}
+
+.modal-firma-actions{
+  margin-top: 1rem;
+}
+
+.btn-clean-firma{
+  background-color: #ff0000;
+  color: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  margin-right: 2rem;
+}
+
+.btn-clean-firma:hover{
+  background-color: #ca0505;
+  transform: scale(1.02);
+}
+
+.btn-save-firma{
+  background-color: #39a900;
+  color: #fff;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.btn-save-firma:hover{
+  background-color: #2d8a00;
+  transform: scale(1.02);
+}

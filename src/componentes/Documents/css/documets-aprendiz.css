@@ -1,0 +1,153 @@
+.documents-aprendiz-main{
+    margin-top: 120px;
+    padding-top: 20px;
+}
+.docs-content{
+    position: relative;
+    left: 15%;
+    width: 80%;
+}
+/* Estilos para el formulario de carga de documentos */
+.form-docs-aprendiz {
+    width: 80%;
+}
+
+.form-docs-aprendiz select,
+.form-docs-aprendiz input[type='file'],
+.form-docs-aprendiz button {
+    margin-bottom: 15px;
+}
+  
+.form-docs-aprendiz select {
+    width: 80%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #EEEEEE;
+    background-color: #EEEEEE;
+}
+  
+.form-docs-aprendiz input[type='file'] {
+    width: 55%;
+}
+  
+.form-docs-aprendiz button {
+    background-color: #39a900; /* Verde */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+  
+.form-docs-aprendiz button:hover {
+    background-color: #45a049; /* Verde más oscuro */
+}
+  
+/* Estilos para la tabla de documentos */
+.table-container {
+    margin-top: 20px;
+    position: relative;
+    left: 0%;
+    bottom: 10px;
+}
+  
+.table-container table {
+    width: 90%;
+    border-collapse: collapse;
+    box-shadow: 1px 1px 1px 2px rgba(0.3, 0.3, 0.3, 0.2);
+}
+  
+.table-container th,
+.table-container td {
+    border: 1px solid #dddddd;
+    padding: 8px;
+    text-align: left;
+}
+  
+.table-container th {
+    background-color: #04324D;
+    color: #fff;
+}
+
+.table-container tr:nth-child(even) {
+    background-color: #f2f2f2; /* Gris claro */
+}
+  
+.table-container tr:hover {
+    background-color: #ddd; /* Gris más oscuro */
+}
+.btnDownloadAprend{
+    color: #39a900;
+    font-size: 22px;
+}
+.btnDownloadAprend:hover{
+    transform: scale(1.2);
+}
+.upTitle{
+    color: #39a900;
+}
+
+/* Estilos para el tooltip */
+.btn-download-container {
+    position: relative;
+    display: inline-block;
+}
+
+.download-tooltip-docs-aprendiz{
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 12px;
+    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+    pointer-events: none; /* Evita que el tooltip afecte los eventos del botón */
+    z-index: 1000;
+}
+
+/* Para dispositivos */
+@media screen and (max-width: 480px) {
+    .docs-content{
+        position: relative;
+        left: 0%;
+        width: 100%;
+        padding: 8px;
+    }
+    .form-docs-aprendiz {
+        margin-bottom: 30px;
+        position: relative;
+        width: 50%;
+        left: 0px;
+    }
+
+    .form-docs-aprendiz form{
+        width: 330px;
+    }
+    .form-docs-aprendiz select {
+        display: flex;
+        position: relative;
+        left: -10px;
+        width: 100%;
+        padding: 8px;
+        border-radius: 5px;
+        border: 1px solid #EEEEEE;
+    }
+    .form-docs-aprendiz input[type='file'] {
+        display: flex;
+        position: relative;
+        padding: 8px;
+        left: -10px;
+        width: 100%;
+        border-radius: 5px;
+        border: 1px solid #EEEEEE;
+    }
+
+    .table-container {
+        margin-top: 20px;
+        position: relative;
+        left: 0%;
+    }
+} 

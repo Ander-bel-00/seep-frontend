@@ -1,0 +1,47 @@
+.footer-container {
+  width: 100%; /* Establece el ancho del contenedor del footer al 100% del ancho de la ventana del navegador */
+  position: relative;
+  top: 80px;
+}
+  
+.footer {
+  color: #000000;
+  text-align: center; /* Esto centra el texto dentro del footer */
+  padding: 10px;
+}
+
+@media screen and (max-width: 1280px) {
+  .footer-container {
+    width: 100%; /* Establece el ancho del contenedor del footer al 100% del ancho de la ventana del navegador */
+    position: relative;
+    top: 60px;
+  }
+
+  .footer {
+    color: #000000;
+    text-align: center; /* Esto centra el texto dentro del footer */
+    padding: 10px;
+    position: relative;
+    top: 5px;
+  } 
+}
+
+@media screen and (max-width: 1272px) {
+  .footer-container {
+    width: 100%; /* Establece el ancho del contenedor del footer al 100% del ancho de la ventana del navegador */
+    position: relative;
+    top: 80px;
+  }
+  .footer {
+    color: #000000;
+    text-align: center; /* Esto centra el texto dentro del footer */
+    padding: 10px;
+    position: relative;
+    top: 1px;
+  } 
+}
+@media screen and (max-width:480px) {
+    .footer {
+        display: none;
+    }
+}
