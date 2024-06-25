@@ -1,7 +1,8 @@
 import React, { createContext, useState, useContext, useEffect } from "react";
-import { Navigate } from 'react-router-dom';
-import CryptoJS from 'crypto-js';
+import { Navigate } from "react-router-dom";
+import CryptoJS from "crypto-js";
 import clienteAxios from "../api/axios";
+import Cookies from "js-cookie";
 
 const AuthContext = createContext();
 
@@ -34,7 +35,8 @@ export const AuthProvider = ({ children }) => {
   const [userProfile, setUserProfile] = useState(null);
 
   useEffect(() => {
-    const isAuthenticatedSesionStorage = sessionStorage.getItem("isAuthenticated");
+    const isAuthenticatedSesionStorage =
+      sessionStorage.getItem("isAuthenticated");
     const userRoleSesionStorage = sessionStorage.getItem("userRole");
     const userProfileSesionStorage = sessionStorage.getItem("userProfile");
 
@@ -57,11 +59,7 @@ export const AuthProvider = ({ children }) => {
       setUserRole(res.data.usuario.rol_usuario);
       setUserProfile(res.data.usuario);
       const token = res.data.token;
-      sessionStorage.setItem("token", token);
-      sessionStorage.setItem("isAuthenticated", true);
-      sessionStorage.setItem("userRole", res.data.usuario.rol_usuario);
-      const encryptedProfile = encryptUserProfile(res.data.usuario);
-      sessionStorage.setItem("userProfile", encryptedProfile);
+      Cookies.set("token", token, { expires: 1 }); // Configura la cookie para que expire en un día
       navigate(`/${res.data.usuario.rol_usuario}`);
     } catch (error) {
       console.error("Error al inciar Sesión: ", error);
@@ -69,9 +67,17 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
+  useEffect(() => {
+    const token = Cookies.get("token");
+    if (token) {
+      clienteAxios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+      setIsAuthenticated(true);
+    }
+  }, []);
+
   const handleLogout = async () => {
     try {
-      await clienteAxios.post('/logout');
+      await clienteAxios.post("/logout");
       // Limpiar todos los datos de sessionStorage
       sessionStorage.clear();
       setIsAuthenticated(false);
@@ -79,7 +85,7 @@ export const AuthProvider = ({ children }) => {
       setShowNav(false);
       return <Navigate to="/login" />;
     } catch (error) {
-      console.error('Error al cerrar sesión:', error);
+      console.error("Error al cerrar sesión:", error);
     }
   };
 
@@ -92,7 +98,7 @@ export const AuthProvider = ({ children }) => {
         handleLogin,
         handleLogout,
         showNav,
-        setShowNav
+        setShowNav,
       }}
     >
       {children}
