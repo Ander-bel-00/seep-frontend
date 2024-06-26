@@ -9,7 +9,6 @@ const clienteAxios = axios.create({
 // Interceptor para agregar el token a las solicitudes
 clienteAxios.interceptors.request.use(config => {
     const token = Cookies.get('token');
-    console.log("Token obtenido de las cookies:", token); // Log para depuración
     if (token) {
         config.headers.Authorization = `Bearer ${token}`;
     }
