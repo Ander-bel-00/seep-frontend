@@ -5,7 +5,6 @@ import "./css/Instructores.css";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import Modal from "react-modal";
-import { useAuth } from "../../context/AuthContext";
 
 function Instructor({ setModalIsOpen }) {
   const [usuario, setUsuario] = useState(null);
@@ -18,13 +17,6 @@ function Instructor({ setModalIsOpen }) {
   const [contrasenaActualizada, setContrasenaActualizada] = useState(false);
   const [modalIsOpen, setModalIsOpenState] = useState(false);
   const navigate = useNavigate();
-
-  const {userProfile} = useAuth();
-
-  const id_instructor = userProfile ? userProfile.id_instructor: null;
-  const numero_documento = userProfile ? userProfile.numero_documento: null;
-
-  console.log(id_instructor)
 
   const openModal = () => {
     setModalIsOpen(true);
@@ -42,13 +34,8 @@ function Instructor({ setModalIsOpen }) {
         const response = await clienteAxios.get("/usuario");
         setUsuario(response.data.usuario);
 
-        const resInstructor = await clienteAxios.get(
-          `instructores/get-Instructor/${id_instructor}`
-        );
-        SetInstructorInfo(resInstructor.data);
-
         const responseFichas = await clienteAxios.get(
-          `/instructor/${resInstructor.data.numero_documento}/fichas-asignadas`
+          `/instructor/${response.data.usuario.numero_documento}/fichas-asignadas`
         );
         const fichasOrdenadas = responseFichas.data.fichasAsignadas.sort(
           (a, b) => {
@@ -57,7 +44,10 @@ function Instructor({ setModalIsOpen }) {
         );
         setFichasAsignadas(fichasOrdenadas);
 
-       
+        const resInstructor = await clienteAxios.get(
+          `instructores/get-Instructor/${response.data.usuario.id_instructor}`
+        );
+        SetInstructorInfo(resInstructor.data);
 
         if (resInstructor.data.contrasena_temporal) {
           openModal();
@@ -178,7 +168,7 @@ function Instructor({ setModalIsOpen }) {
           />
           <button onClick={actualizarContrasena}>Actualizar contraseña</button>
         </Modal>
-        
+        {usuario && usuario.rol_usuario ? (
           <>
             {window.innerWidth >= 1024 ? (
               <Fragment>
@@ -323,7 +313,9 @@ function Instructor({ setModalIsOpen }) {
               </Fragment>
             )}
           </>
-
+        ) : (
+          <p>Cargando usuario...</p>
+        )}
         <div className="pageFichas-content">
           <button
             className="btn-pages"
