@@ -6,6 +6,8 @@ import "./css/documets-aprendiz.css";
 import { FaDownload } from "react-icons/fa";
 
 function Documents() {
+  // Estado para mostrar spinner si se está cargando los datos.
+  const [loading, setLoading] = useState(false);
   const [documento, setDocumento] = useState({
     tipo_documento: "",
     archivo: null,
@@ -45,6 +47,7 @@ function Documents() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true); // Activar el estado de carga
 
     // Verificar si el tipo de documento ya ha sido subido
     const documentoExistente = documentosAprendiz.find(
@@ -80,7 +83,9 @@ function Documents() {
       });
 
       // Actualizar la lista de documentos del aprendiz después de cargar uno nuevo
-      const response = await clienteAxios.get(`/documentos-aprendiz/${id_aprendiz}`);
+      const response = await clienteAxios.get(
+        `/documentos-aprendiz/${id_aprendiz}`
+      );
       setDocumentosAprendiz(response.data.documentos);
     } catch (error) {
       console.error("Error al cargar el documento:", error);
@@ -88,9 +93,13 @@ function Documents() {
       Swal.fire({
         icon: "error",
         title: "Error al cargar el documento",
-        text: error.response?.data?.mensaje || "Hubo un problema al subir el documento",
+        text:
+          error.response?.data?.mensaje ||
+          "Hubo un problema al subir el documento",
         showConfirmButton: true,
       });
+    } finally {
+      setLoading(false); // Desactivar el estado de carga
     }
   };
 
@@ -161,7 +170,9 @@ function Documents() {
                 required
               />
             </p>
-            <button type="submit">Cargar Documento</button>
+            <button type="submit">
+              {loading ? <span className="spinner"></span> : "Cargar Documento"}
+            </button>
           </form>
         </div>
         <div className="table-container">

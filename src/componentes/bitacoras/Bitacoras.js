@@ -8,6 +8,8 @@ import { FaDownload } from "react-icons/fa";
 import { FaFileUpload } from "react-icons/fa";
 
 function Bitacoras() {
+  // Estado para mostrar spinner si se está cargando los datos.
+  const [loading, setLoading] = useState(false);
   const [documento, setDocumento] = useState({
     numero_de_bitacora: "",
     archivo: null,
@@ -53,6 +55,7 @@ function Bitacoras() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true); // Activar el estado de carga
     const formData = new FormData();
     formData.append("numero_de_bitacora", documento.numero_de_bitacora);
     formData.append("archivo", documento.archivo);
@@ -85,6 +88,8 @@ function Bitacoras() {
         text: error.response.data.mensaje,
         showConfirmButton: true,
       });
+    } finally {
+      setLoading(false); // Desactivar el estado de carga
     }
   };
 
@@ -209,7 +214,7 @@ function Bitacoras() {
               />
             </p>
             <button type="submit" className="btn-upload-biatcora">
-              Cargar Bitácora
+              {loading ? <span className="spinner"></span> : "Cargar Bitácora"}
             </button>
           </form>
         </div>
@@ -285,7 +290,9 @@ function Bitacoras() {
           className="modal-bitacoras-aprendiz"
           overlayClassName="modal-overlay-bitacoras-aprendiz"
         >
-          <button onClick={handleCloseModal} ><strong>X</strong></button>
+          <button onClick={handleCloseModal}>
+            <strong>X</strong>
+          </button>
           <h2>Actualizar Bitácora</h2>
           <input
             type="file"
