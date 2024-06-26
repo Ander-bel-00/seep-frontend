@@ -24,6 +24,9 @@ function AgendaContainer() {
           respuesta.data.visitas.length / 3
         );
         setTotalPaginas(totalPaginasCalculado);
+        const eventosActivos = respuesta.data.visitas.filter(
+          (evento) => evento.estado !== "cancelado"
+        );
         setVisitas(eventosActivos || []);
 
         // Obtener todos los tipos de visita activos
