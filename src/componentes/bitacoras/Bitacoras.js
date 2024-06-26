@@ -214,7 +214,7 @@ function Bitacoras() {
               />
             </p>
             <button type="submit" className="btn-upload-biatcora">
-              {loading ? <span className="spinner"></span> : "Cargar Bitácora"}
+              {loading ? (<span className="spinner"></span>) : ("Cargar Bitácora")}
             </button>
           </form>
         </div>

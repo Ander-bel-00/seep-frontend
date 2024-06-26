@@ -171,7 +171,7 @@ function Documents() {
               />
             </p>
             <button type="submit">
-              {loading ? <span className="spinner"></span> : "Cargar Documento"}
+              {loading ? (<span className="spinner"></span>) : ("Cargar Documento")}
             </button>
           </form>
         </div>
