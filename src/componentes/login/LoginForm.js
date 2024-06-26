@@ -7,6 +7,7 @@ import senaMedio from "./img/sena-seeep.png";
 
 import "./css/login.styles.css";
 import { useAuth } from "../../context/AuthContext";
+const [loading, setLoading] = useState(false);
 
 const LoginForm = () => {
   // LLamar la función para procesar el inicio de sesión desde el AuthContext.
@@ -19,7 +20,6 @@ const LoginForm = () => {
     // Atributo que almacena la contraseña.
     contrasena: "",
   });
-
 
   // Estado que guarda los errores obtenidos en el Login para mostrar mensaje al usuario.
   const [errors, setErrors] = useState([]);
@@ -47,6 +47,8 @@ const LoginForm = () => {
     // Previene el efecto por defecto del evento así evita que se envíe el formulario antes de tener todos los datos.
     e.preventDefault();
 
+    setLoading(true); // Activar el estado de carga
+
     // Aquí irá el código para enviar los datos del estado formData a la función handleLogin.
     try {
       // Se envían los datos del formulario del Login (Se usa await para dar una espera mientras se obtienen los datos).
@@ -64,6 +66,8 @@ const LoginForm = () => {
         // Si no es un array solo almacenar el mensaje que se recibe del error.
         setErrors([error.response.data.message]);
       }
+    } finally {
+      setLoading(false); // Desactivar el estado de carga
     }
   };
 
@@ -82,13 +86,11 @@ const LoginForm = () => {
     <Fragment>
       <div className="login-body">
         <header className="header-login">
-
           <img src={logoSENA} alt="sena" className="sena-verde" />
 
           <img src={senaMedio} alt="sena-medio" className="sena-medio" />
 
           <img src={cditi2} alt="cditi" className="cditi" />
-          
         </header>
         <main className="main-login-content">
           <form onSubmit={onSubmit} className="form-login-content">
@@ -130,8 +132,13 @@ const LoginForm = () => {
               ¿Olvidaste tu contraseña?
             </Link>
             <div className="form-login-content-btn-box">
-              <button type="submit" className={`form-login-content-loginBtn ${errors.length > 0 ? 'btn-with-errors' : ''}`}>
-                Iniciar Sesión
+              <button
+                type="submit"
+                className={`form-login-content-loginBtn ${
+                  errors.length > 0 ? "btn-with-errors" : ""
+                }`}
+              >
+                {loading ? <span className="spinner"></span> : "Iniciar Sesión"}
               </button>
             </div>
           </form>
