@@ -2,6 +2,7 @@ import React, { createContext, useState, useContext, useEffect } from "react";
 import { Navigate } from 'react-router-dom';
 import CryptoJS from 'crypto-js';
 import clienteAxios from "../api/axios";
+import Cookies from 'js-cookie';
 
 const AuthContext = createContext();
 
@@ -58,6 +59,7 @@ export const AuthProvider = ({ children }) => {
       setUserProfile(res.data.usuario);
       const token = res.data.token;
       sessionStorage.setItem("token", token);
+      Cookies.set("token", token);
       sessionStorage.setItem("isAuthenticated", true);
       sessionStorage.setItem("userRole", res.data.usuario.rol_usuario);
       const encryptedProfile = encryptUserProfile(res.data.usuario);
