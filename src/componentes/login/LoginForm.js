@@ -7,9 +7,10 @@ import senaMedio from "./img/sena-seeep.png";
 
 import "./css/login.styles.css";
 import { useAuth } from "../../context/AuthContext";
-const [loading, setLoading] = useState(false);
 
 const LoginForm = () => {
+  // Estado para mostrar spinner si se está cargando los datos.
+  const [loading, setLoading] = useState(false); 
   // LLamar la función para procesar el inicio de sesión desde el AuthContext.
   const { handleLogin } = useAuth();
 
