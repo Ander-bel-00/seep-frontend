@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useRef } from "react";
+import React, { useState, useRef, Fragment } from "react";
 import clienteAxios from "../../../api/axios";
 import Swal from "sweetalert2";
 import "./css/recuperar.css";
@@ -161,59 +161,62 @@ function RecuperaContrasena() {
               </form>
             </div>
           ) : (
-            <div className="recupera-codigo-container">
-              <h3 className="recupera-titulo">Código de verificación</h3>
-              <div className="codigo-inputs">
-                {codigoVerificacion.map((digito, index) => (
-                  <input
-                    key={index}
-                    className="recupera-codigo-input"
-                    type="text"
-                    maxLength="1"
-                    value={digito}
-                    onChange={(e) => handleChangeCodigo(index, e.target.value)}
-                    ref={(inputRef) => (codeInputsRefs.current[index] = inputRef)}
-                  />
-                ))}
-              </div>
-              <div className="flex justify-center items-center mt-2">
-                <button className="recupera-verificar-boton" onClick={verificarCodigo}>
-                  Verificar código
-                </button>
-              </div>
-            </div>
-          )}
-          {successMessage === "Código de verificación válido" && (
-            <div className="recupera-cambio-formulario">
-              <h3 className="recupera-titulo">Cambiar contraseña</h3>
-              <form onSubmit={handleCambiarContrasena}>
-                <input
-                  className="recupera-cambio-input"
-                  type="password"
-                  name="nueva_contrasena"
-                  value={nuevaContrasena}
-                  onChange={(e) => setNuevaContrasena(e.target.value)}
-                  required
-                  placeholder="Nueva contraseña"
-                />
-                <input
-                  className="recupera-cambio-input"
-                  type="password"
-                  name="confirmar_contrasena"
-                  value={confirmarContrasena}
-                  onChange={(e) => setConfirmarContrasena(e.target.value)}
-                  required
-                  placeholder="Confirmar contraseña"
-                />
-                {showLoader ? (
-                  <div className="loader"></div>
-                ) : (
-                  <button className="recupera-cambio-boton" type="submit">
-                    Cambiar contraseña
-                  </button>
-                )}
-              </form>
-            </div>
+            <Fragment>
+              {successMessage === "Código de verificación válido" ? (
+                <div className="recupera-cambio-formulario">
+                  <h3 className="recupera-titulo">Cambiar contraseña</h3>
+                  <form onSubmit={handleCambiarContrasena}>
+                    <input
+                      className="recupera-cambio-input"
+                      type="password"
+                      name="nueva_contrasena"
+                      value={nuevaContrasena}
+                      onChange={(e) => setNuevaContrasena(e.target.value)}
+                      required
+                      placeholder="Nueva contraseña"
+                    />
+                    <input
+                      className="recupera-cambio-input"
+                      type="password"
+                      name="confirmar_contrasena"
+                      value={confirmarContrasena}
+                      onChange={(e) => setConfirmarContrasena(e.target.value)}
+                      required
+                      placeholder="Confirmar contraseña"
+                    />
+                    {showLoader ? (
+                      <div className="loader"></div>
+                    ) : (
+                      <button className="recupera-cambio-boton" type="submit">
+                        Cambiar contraseña
+                      </button>
+                    )}
+                  </form>
+                </div>
+              ) : (
+                <div className="recupera-codigo-container">
+                  <h3 className="recupera-titulo">Código de verificación</h3>
+                  <div className="codigo-inputs">
+                    {codigoVerificacion.map((digito, index) => (
+                      <input
+                        key={index}
+                        className="recupera-codigo-input"
+                        type="text"
+                        maxLength="1"
+                        value={digito}
+                        onChange={(e) => handleChangeCodigo(index, e.target.value)}
+                        ref={(inputRef) => (codeInputsRefs.current[index] = inputRef)}
+                      />
+                    ))}
+                  </div>
+                  <div className="flex justify-center items-center mt-2">
+                    <button className="recupera-verificar-boton" onClick={verificarCodigo}>
+                      Verificar código
+                    </button>
+                  </div>
+                </div>
+              )}
+            </Fragment>
           )}
         </div>
         <footer className="piePagina">© SENA - Todos los derechos reservados</footer>

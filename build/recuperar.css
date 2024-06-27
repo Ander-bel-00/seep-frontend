@@ -4,6 +4,10 @@
   align-items: center;
 }
 
+.hidden{
+  visibility: hidden;
+}
+
 .recuperar-box-main {
   display: flex;
   justify-content: center;
