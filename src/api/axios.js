@@ -2,7 +2,7 @@ import axios from "axios";
 import Cookies from 'js-cookie';
 
 const clienteAxios = axios.create({
-    baseURL: process.env.REACT_APP_API_BASE_URL || 'https://seep.azurewebsites.net',
+    baseURL: process.env.REACT_APP_API_BASE_URL || 'https://seepapp.azurewebsites.net',
     withCredentials: true, // Esta línea es crucial para enviar cookies con las solicitudes
 });
 
