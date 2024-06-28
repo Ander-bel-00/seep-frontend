@@ -39,20 +39,22 @@ function Documents() {
   };
 
   const handleArchivoChange = (e) => {
-    const file = e.target.files[0];
-    setDocumento({
-      ...documento,
-      archivo: file,
-    });
-  
+    const archivo = e.target.files[0];
+    const allowedFileTypes = ['application/pdf'];
+
     // Verificar el tipo de archivo antes de enviar
-    if (file && file.type !== "application/pdf") {
+    if (archivo && !allowedFileTypes.includes(archivo.type)) {
       Swal.fire({
         icon: "error",
-        title: "Solo se permiten archivos en PDF",
+        title: 'Archivo no permitido',
+        text: "Solo se permiten archivos en PDF",
         showConfirmButton: true,
       });
+      setDocumento({ ...documento, archivo: null });
+      e.target.value = null;
+      return;
     }
+    setDocumento({ ...documento, archivo });
   };
   
 
