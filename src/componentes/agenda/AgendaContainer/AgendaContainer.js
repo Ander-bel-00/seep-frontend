@@ -20,10 +20,6 @@ function AgendaContainer() {
       try {
         const respuesta = await clienteAxios.get("/visitas-getAll");
         setVisitas(respuesta.data.visitas);
-        const totalPaginasCalculado = Math.ceil(
-          respuesta.data.visitas.length / 3
-        );
-        setTotalPaginas(totalPaginasCalculado);
         const eventosActivos = respuesta.data.visitas.filter(
           (evento) => evento.estado !== "cancelado"
         );
@@ -32,6 +28,11 @@ function AgendaContainer() {
         // Obtener todos los tipos de visita activos
         const tiposActivos = eventosActivos.map((evento) => evento.tipo_visita);
         setTiposVisitaActivos([...new Set(tiposActivos)]);
+
+        const totalPaginasCalculado = Math.ceil(
+          eventosActivos.length / 3
+        );
+        setTotalPaginas(totalPaginasCalculado);
       } catch (error) {
         console.error("Error al obtener las visitas:", error);
       }
