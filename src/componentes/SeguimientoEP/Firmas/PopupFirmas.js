@@ -18,6 +18,7 @@ const PopupFirmas = ({
 }) => {
   const sigCanvas = useRef({});
   const [editIndex, setEditIndex] = useState(null);
+  const [isDrawing, setIsDrawing] = useState(false);
 
   const clearCanvas = () => {
     sigCanvas.current.clear();
@@ -61,6 +62,30 @@ const PopupFirmas = ({
   const handleSelectFirma = (firma) => {
     onSelect(firma);
     onClose(); // Asegúrate de cerrar el modal después de seleccionar la firma
+  };
+
+  const handleFileUpload = (event) => {
+    const file = event.target.files[0];
+    if (file && (file.type === "image/jpeg" || file.type === "image/png")) {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        const firma = e.target.result;
+        onSave(firma, editIndex);
+        setEditIndex(null);
+
+        const updatedFirmas = [...firmas];
+        if (editIndex !== null) {
+          updatedFirmas[editIndex] = firma;
+        } else {
+          updatedFirmas.push(firma);
+        }
+        onSelect(firma);
+        localStorage.setItem("firmas", JSON.stringify(updatedFirmas));
+      };
+      reader.readAsDataURL(file);
+    } else {
+      alert("Por favor, suba un archivo JPG o PNG válido.");
+    }
   };
 
   return (
@@ -107,17 +132,34 @@ const PopupFirmas = ({
         </div>
         <div className="firma-draw">
           <h3>{editIndex !== null ? "Editar Firma" : "Crear Nueva Firma"}</h3>
-          <SignatureCanvas
-            ref={sigCanvas}
-            canvasProps={{ width: 300, height: 150, className: "sigCanvas" }}
-          />
-          <div className="modal-firma-actions">
-            <button onClick={clearCanvas} className="btn-clean-firma">
-              Limpiar
+          <div className="upload-or-draw">
+            <button onClick={() => setIsDrawing(true)} className="btn-draw-firma">
+              Dibujar Firma
             </button>
-            <button onClick={saveFirma} className="btn-save-firma">
-              {editIndex !== null ? "Actualizar Firma" : "Guardar Firma"}
-            </button>
+            <input
+              type="file"
+              accept="image/jpeg, image/png"
+              onChange={handleFileUpload}
+              className="btn-upload-firma"
+            />
+          </div>
+          <div className="mt-3">
+          {isDrawing && (
+            <>
+              <SignatureCanvas
+                ref={sigCanvas}
+                canvasProps={{ width: 300, height: 150, className: "sigCanvas" }}
+              />
+              <div className="modal-firma-actions relative left-7">
+                <button onClick={clearCanvas} className="btn-clean-firma">
+                  Limpiar
+                </button>
+                <button onClick={saveFirma} className="btn-save-firma">
+                  {editIndex !== null ? "Actualizar Firma" : "Guardar Firma"}
+                </button>
+              </div>
+            </>
+          )}
           </div>
         </div>
       </div>

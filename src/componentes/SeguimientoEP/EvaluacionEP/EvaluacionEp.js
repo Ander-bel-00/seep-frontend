@@ -176,6 +176,7 @@ function EvaluacionEp({ evaluacionAprendiz, setEvalaucionAprendiz }) {
                     src={evaluacionAprendiz.firma_ente_conformador}
                     alt="Firma Ente Conformador"
                     className="relative left-10"
+                    style={{ width: 200, height: 100 }} // Aumenta el tamaño aquí
                   />
                 ) : null}
               </div>
@@ -188,6 +189,7 @@ function EvaluacionEp({ evaluacionAprendiz, setEvalaucionAprendiz }) {
                     src={evaluacionAprendiz.firma_aprendiz}
                     alt="Firma del Aprendiz"
                     className="relative ml-3"
+                    style={{ width: 200, height: 100 }} // Aumenta el tamaño aquí
                   />
                 ) : null}
               </div>
@@ -211,6 +213,7 @@ function EvaluacionEp({ evaluacionAprendiz, setEvalaucionAprendiz }) {
                     src={evaluacionAprendiz.firma_instructor_seguimiento}
                     alt="Firma del Instructor de Seguimiento"
                     className="relative ml-5"
+                    style={{ width: 200, height: 100 }} // Aumenta el tamaño aquí
                   />
                 ) : null}
               </div>

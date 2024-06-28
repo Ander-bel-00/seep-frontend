@@ -115,14 +115,24 @@ function PlanEP({ evaluacionAprendiz, setEvalaucionAprendiz }) {
 
     if (currentFirmaField !== null) {
       const updatedCampos = [...campos];
-      updatedCampos[currentFirmaField] = { ...updatedCampos[currentFirmaField], firma };
+      updatedCampos[currentFirmaField] = {
+        ...updatedCampos[currentFirmaField],
+        firma,
+      };
       setCampos(updatedCampos);
 
       const updatedEvalaucionAprendiz = {
         ...evaluacionAprendiz,
-        firma_ente_conformador: currentFirmaField === 0 ? firma : evaluacionAprendiz.firma_ente_conformador,
-        firma_aprendiz: currentFirmaField === 1 ? firma : evaluacionAprendiz.firma_aprendiz,
-        firma_instructor_seguimiento: currentFirmaField === 2 ? firma : evaluacionAprendiz.firma_instructor_seguimiento,
+        firma_ente_conformador:
+          currentFirmaField === 0
+            ? firma
+            : evaluacionAprendiz.firma_ente_conformador,
+        firma_aprendiz:
+          currentFirmaField === 1 ? firma : evaluacionAprendiz.firma_aprendiz,
+        firma_instructor_seguimiento:
+          currentFirmaField === 2
+            ? firma
+            : evaluacionAprendiz.firma_instructor_seguimiento,
       };
       setEvalaucionAprendiz(updatedEvalaucionAprendiz);
     }
@@ -130,15 +140,25 @@ function PlanEP({ evaluacionAprendiz, setEvalaucionAprendiz }) {
 
   const handleSelectFirma = (firma) => {
     const updatedCampos = [...campos];
-    updatedCampos[currentFirmaField] = { ...updatedCampos[currentFirmaField], firma };
+    updatedCampos[currentFirmaField] = {
+      ...updatedCampos[currentFirmaField],
+      firma,
+    };
     setCampos(updatedCampos);
     setShowPopup(false);
 
     const updatedEvalaucionAprendiz = {
       ...evaluacionAprendiz,
-      firma_ente_conformador: currentFirmaField === 0 ? firma : evaluacionAprendiz.firma_ente_conformador,
-      firma_aprendiz: currentFirmaField === 1 ? firma : evaluacionAprendiz.firma_aprendiz,
-      firma_instructor_seguimiento: currentFirmaField === 2 ? firma : evaluacionAprendiz.firma_instructor_seguimiento,
+      firma_ente_conformador:
+        currentFirmaField === 0
+          ? firma
+          : evaluacionAprendiz.firma_ente_conformador,
+      firma_aprendiz:
+        currentFirmaField === 1 ? firma : evaluacionAprendiz.firma_aprendiz,
+      firma_instructor_seguimiento:
+        currentFirmaField === 2
+          ? firma
+          : evaluacionAprendiz.firma_instructor_seguimiento,
     };
     setEvalaucionAprendiz(updatedEvalaucionAprendiz);
   };
@@ -284,7 +304,7 @@ function PlanEP({ evaluacionAprendiz, setEvalaucionAprendiz }) {
                     <img
                       src={campos[0].firma}
                       alt="Firma del Ente Conformador"
-                      style={{ width: 100, height: 50 }}
+                      style={{ width: 200, height: 100 }} // Aumenta el tamaño aquí
                     />
                   ) : (
                     "Añadir Firma"
@@ -304,7 +324,7 @@ function PlanEP({ evaluacionAprendiz, setEvalaucionAprendiz }) {
                     <img
                       src={campos[1].firma}
                       alt="Firma del Aprendiz"
-                      style={{ width: 100, height: 50 }}
+                      style={{ width: 200, height: 100 }} // Aumenta el tamaño aquí
                     />
                   ) : (
                     "Añadir Firma"
@@ -333,7 +353,7 @@ function PlanEP({ evaluacionAprendiz, setEvalaucionAprendiz }) {
                     <img
                       src={campos[2].firma}
                       alt="Firma Instructor seguimiento"
-                      style={{ width: 100, height: 50 }}
+                      style={{ width: 200, height: 100 }} // Aumenta el tamaño aquí
                     />
                   ) : (
                     "Añadir Firma"

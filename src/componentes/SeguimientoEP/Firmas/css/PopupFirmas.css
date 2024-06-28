@@ -153,3 +153,11 @@
   background-color: #2d8a00;
   transform: scale(1.02);
 }
+
+.btn-draw-firma{
+  background-color: #39a900;
+  color: #fff;
+  padding: 8px;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
