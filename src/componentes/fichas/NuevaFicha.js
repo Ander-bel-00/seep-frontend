@@ -32,8 +32,6 @@ function NuevaFicha() {
           return navigate("../");
         }
       });
-
-      console.log(response.data);
     } catch (error) {
       console.error("Error al crear la ficha:", error);
 

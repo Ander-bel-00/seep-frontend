@@ -99,7 +99,6 @@ function Documents() {
           "Hubo un problema al subir el documento",
         showConfirmButton: true,
       });
-      setLoading(false);
     } finally {
       setLoading(false); // Desactivar el estado de carga
     }

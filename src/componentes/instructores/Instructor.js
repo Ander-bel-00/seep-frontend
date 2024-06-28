@@ -119,7 +119,6 @@ function Instructor({ setModalIsOpen }) {
           contrasena: nuevaContrasena,
         }
       );
-      console.log("Contraseña actualizada", response.data);
       Swal.fire({
         title: "Su contraseña se ha actualizado",
         text: "Le informamos que su contraseña se ha actualizado exitosamente",
@@ -141,8 +140,6 @@ function Instructor({ setModalIsOpen }) {
       });
     }
   };
-
-  console.log(infoInstructor.contrasena_temporal)
 
   return (
     <Fragment>
