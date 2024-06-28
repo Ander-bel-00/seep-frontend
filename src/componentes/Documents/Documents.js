@@ -48,13 +48,14 @@ function Documents() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true); // Activar el estado de carga
-
+  
     // Verificar si el tipo de documento ya ha sido subido
     const documentoExistente = documentosAprendiz.find(
       (doc) => doc.tipo_documento === documento.tipo_documento
     );
-
+  
     if (documentoExistente) {
+      setLoading(false); // Desactivar el estado de carga
       Swal.fire({
         icon: "error",
         title: "El tipo de documento ya ha sido cargado",
@@ -63,33 +64,30 @@ function Documents() {
       });
       return;
     }
-
+  
     const formData = new FormData();
     formData.append("tipo_documento", documento.tipo_documento);
     formData.append("archivo", documento.archivo);
-
+  
     try {
       await clienteAxios.post(`/documentos-upload/${id_aprendiz}`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
       });
-
-      // Mostrar alerta de éxito
+  
       Swal.fire({
         icon: "success",
         title: "Documento cargado exitosamente",
         showConfirmButton: true,
       });
-
-      // Actualizar la lista de documentos del aprendiz después de cargar uno nuevo
+  
       const response = await clienteAxios.get(
         `/documentos-aprendiz/${id_aprendiz}`
       );
       setDocumentosAprendiz(response.data.documentos);
     } catch (error) {
       console.error("Error al cargar el documento:", error);
-      // Mostrar alerta de error si falla la carga del documento
       Swal.fire({
         icon: "error",
         title: "Error al cargar el documento",
@@ -102,6 +100,7 @@ function Documents() {
       setLoading(false); // Desactivar el estado de carga
     }
   };
+  
 
   const handleDownload = async (archivo) => {
     try {
