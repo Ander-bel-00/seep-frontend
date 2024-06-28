@@ -5,6 +5,7 @@ import "./styles/Fichas.css";
 
 function FichasForm() {
   const [formData, setFormData] = useState({});
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -13,6 +14,7 @@ function FichasForm() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    setLoading(true); // Activar el estado de carga
     try {
       const response = await clienteAxios.post("/fichas-Admin-new", formData);
 
@@ -52,6 +54,8 @@ function FichasForm() {
           confirmButtonText: "Aceptar",
         });
       }
+    } finally {
+      setLoading(false); // Desactivar el estado de carga
     }
   };
 
@@ -84,13 +88,13 @@ function FichasForm() {
                   required
                 />
                 <label htmlFor="nivel_formacion">Nivel de Formación</label>
-                <input
-                  type="text"
-                  placeholder="Nivel de formación"
-                  name="nivel_formacion"
-                  onChange={handleChange}
-                  required
-                />
+                <select name="nivel_formacion" onChange={handleChange} required>
+                  <option selected disabled>
+                    Selecciona el nivel de formación
+                  </option>
+                  <option value="Tecnico">Técnico</option>
+                  <option value="Tecnologico">Tecnológico</option>
+                </select>
                 <label htmlFor="titulo_obtenido">Titulo Obtenido</label>
                 <input
                   type="text"
@@ -104,23 +108,27 @@ function FichasForm() {
                 <label htmlFor="nombre_regional">
                   Nombre de la Regional a la que pertenece
                 </label>
-                <input
-                  type="text"
-                  placeholder="Nombre de la Regional"
-                  required
-                  name="nombre_regional"
-                  onChange={handleChange}
-                />
+                <select required name="nombre_regional" onChange={handleChange}>
+                  <option selected disabled>
+                    Selecciona la Regional
+                  </option>
+                  <option value="Risaralda">Risaralda</option>
+                </select>
                 <label htmlFor="centro_formacion">
                   Nombre del Centro de Formación
                 </label>
-                <input
-                  type="text"
-                  placeholder="Nombre del centro de formación"
+                <select
                   required
                   name="centro_formacion"
                   onChange={handleChange}
-                />
+                >
+                  <option selected disabled>
+                    Selecciona el centro de formación
+                  </option>
+                  <option value="Centro de Diseño e Innovación Tecnológica Industrial">
+                    Centro de Diseño e Innovación Tecnológica Industrial
+                  </option>
+                </select>
                 <label htmlFor="fecha_inicio_lectiva">
                   Fecha de Inicio de Etapa Lectiva
                 </label>
@@ -142,7 +150,11 @@ function FichasForm() {
               </div>
             </div>
             <button type="submit" className="btn btn-primary">
-              Registrar nueva ficha
+              {loading ? (
+                <span className="spinner"></span>
+              ) : (
+                "Registrar nueva ficha"
+              )}
             </button>
           </form>
         </div>

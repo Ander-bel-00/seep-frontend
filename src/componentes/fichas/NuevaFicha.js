@@ -8,6 +8,7 @@ function NuevaFicha() {
   const { id_instructor } = useParams();
   const [formData, setFormData] = useState({});
   const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -16,6 +17,7 @@ function NuevaFicha() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    setLoading(true); // Activar el estado de carga
     try {
       const response = await clienteAxios.post(
         "/fichas/instructor/add",
@@ -56,6 +58,8 @@ function NuevaFicha() {
           confirmButtonText: "Aceptar",
         });
       }
+    } finally {
+      setLoading(false); // Desactivar el estado de carga
     }
   };
 
@@ -150,7 +154,11 @@ function NuevaFicha() {
               </div>
             </div>
             <button type="submit" className="btn btn-primary">
-              Registrar nueva ficha
+              {loading ? (
+                <span className="spinner"></span>
+              ) : (
+                "Registrar nueva ficha"
+              )}
             </button>
           </form>
         </div>

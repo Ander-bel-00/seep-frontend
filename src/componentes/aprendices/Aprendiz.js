@@ -22,6 +22,7 @@ function Aprendiz({ setModalIsOpen, setModalEmpresaOpen }) {
   const [empresaInfo, setEmpresaInfo] = useState(null);
   const [fichaAprendizInfo, setFichaAprendizInfo] = useState([]);
   const [instructorInfo, setInstructorInfo] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   const openModal = () => {
     setModalIsOpen(true);
@@ -71,7 +72,9 @@ function Aprendiz({ setModalIsOpen, setModalEmpresaOpen }) {
         );
         setFichaAprendizInfo(fichaData.data.ficha);
 
-        const instructorData = await clienteAxios.get(`/instructor/get/ficha/${resAprendiz.data.numero_ficha}`);
+        const instructorData = await clienteAxios.get(
+          `/instructor/get/ficha/${resAprendiz.data.numero_ficha}`
+        );
         setInstructorInfo(instructorData.data);
 
         if (resAprendiz.data.contrasena_temporal) {
@@ -101,6 +104,7 @@ function Aprendiz({ setModalIsOpen, setModalEmpresaOpen }) {
   });
 
   const actualizarContrasena = async () => {
+    setLoading(true); // Activar el estado de carga
     if (!nuevaContrasena.trim()) {
       Swal.fire({
         title: "Error",
@@ -139,6 +143,8 @@ function Aprendiz({ setModalIsOpen, setModalEmpresaOpen }) {
         icon: "error",
         confirmButtonText: "Aceptar",
       });
+    } finally {
+      setLoading(false); // Desactivar el estado de carga
     }
   };
 
@@ -148,6 +154,7 @@ function Aprendiz({ setModalIsOpen, setModalEmpresaOpen }) {
   };
 
   const añadirInfoEmpresa = async () => {
+    setLoading(true); // Activar el estado de carga
     try {
       const res = await clienteAxios.post(
         `/empresas/add/${aprendizInfo.id_aprendiz}`,
@@ -170,6 +177,8 @@ function Aprendiz({ setModalIsOpen, setModalEmpresaOpen }) {
         icon: "error",
         confirmButtonText: "Aceptar",
       });
+    } finally {
+      setLoading(false); // Desactivar el estado de carga
     }
   };
 
@@ -185,6 +194,7 @@ function Aprendiz({ setModalIsOpen, setModalEmpresaOpen }) {
 
   const handleNext = async () => {
     try {
+      setLoading(true); // Activar el estado de carga
       const response = await clienteAxios.get(
         `/empresa/aprendiz/${aprendizInfo.id_aprendiz}`
       );
@@ -192,6 +202,8 @@ function Aprendiz({ setModalIsOpen, setModalEmpresaOpen }) {
       setShowVisits(false); // Activa la transición al siguiente contenido
     } catch (error) {
       console.error("Error al obtener la información de la empresa:", error);
+    } finally {
+      setLoading(false); // Desactivar el estado de carga
     }
   };
 
@@ -220,7 +232,11 @@ function Aprendiz({ setModalIsOpen, setModalEmpresaOpen }) {
                 onChange={(e) => setNuevaContrasena(e.target.value)}
               />
               <button onClick={actualizarContrasena}>
-                Actualizar contraseña
+                {loading ? (
+                  <span className="spinner"></span>
+                ) : (
+                  "Actualizar contraseña"
+                )}
               </button>
             </Modal>
             <Modal
@@ -303,7 +319,11 @@ function Aprendiz({ setModalIsOpen, setModalEmpresaOpen }) {
                 onChange={handleChange}
               />
               <button onClick={añadirInfoEmpresa}>
-                Añadir Información de la Empresa
+              {loading ? (
+                <span className="spinner"></span>
+              ) : (
+                "Añadir Información de la Empresa"
+              )}
               </button>
             </Modal>
 
@@ -401,7 +421,14 @@ function Aprendiz({ setModalIsOpen, setModalEmpresaOpen }) {
                       </tbody>
                     </table>
                     <div className="buttons-container">
-                      <button onClick={handleNext}>Siguiente</button>
+                      <button onClick={handleNext}>
+                        {" "}
+                        {loading ? (
+                          <span className="spinner"></span>
+                        ) : (
+                          "Siguiente"
+                        )}
+                      </button>
                     </div>
                   </Fragment>
                 ) : (
@@ -441,11 +468,15 @@ function Aprendiz({ setModalIsOpen, setModalEmpresaOpen }) {
                           {empresaInfo.email_jefe_imediato}
                         </p>
                         <p>
-                          <strong>Instructor Seguimiento Etapa Productiva:</strong>{" "}
+                          <strong>
+                            Instructor Seguimiento Etapa Productiva:
+                          </strong>{" "}
                           {instructorInfo.nombres} {instructorInfo.apellidos}
                         </p>
                         <p>
-                          <strong>E-mail Instructor Seguimiento Etapa Productiva:</strong>{" "}
+                          <strong>
+                            E-mail Instructor Seguimiento Etapa Productiva:
+                          </strong>{" "}
                           {instructorInfo.correo_electronico1}
                         </p>
                       </div>
