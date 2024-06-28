@@ -259,6 +259,7 @@ function Calendario() {
 
       closeModal();
     } catch (error) {
+      console.error(error);
       Swal.fire({
         icon: "error",
         title: "Error",
