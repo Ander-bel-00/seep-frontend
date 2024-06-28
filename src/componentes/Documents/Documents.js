@@ -39,11 +39,22 @@ function Documents() {
   };
 
   const handleArchivoChange = (e) => {
+    const file = e.target.files[0];
     setDocumento({
       ...documento,
-      archivo: e.target.files[0],
+      archivo: file,
     });
+  
+    // Verificar el tipo de archivo antes de enviar
+    if (file && file.type !== "application/pdf") {
+      Swal.fire({
+        icon: "error",
+        title: "Solo se permiten archivos en PDF",
+        showConfirmButton: true,
+      });
+    }
   };
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
