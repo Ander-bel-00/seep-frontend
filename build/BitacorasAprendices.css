@@ -52,6 +52,10 @@
   margin-right: 1rem;
 }
 
+.btnDownload:hover{
+  transform: scale(1.2);
+}
+
 .btnActualizar{
   font-size: 22px;
   color: #39a900;
@@ -129,7 +133,7 @@
   border-radius: 5px;
   font-size: 12px;
   z-index: 1;
-  bottom: -25px; /* Ajusta esta distancia según sea necesario */
+  bottom: -27px; /* Ajusta esta distancia según sea necesario */
   left: 50%;
   transform: translateX(-50%);
   white-space: nowrap;

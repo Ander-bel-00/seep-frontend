@@ -560,7 +560,7 @@ function Calendario() {
                         className="btn btn-danger"
                         onClick={openCancelModal}
                       >
-                        {loading ? (<span className="spinner"></span>) : ("Cancelar Visita")}
+                        Cancelar Visita
                       </button>
                     </div>
                   )}
@@ -746,7 +746,7 @@ function Calendario() {
                       }}
                       style={{ backgroundColor: "#FF0000", color: "#ffffff" }}
                     >
-                      Confirmar Cancelación
+                      {loading ? (<span className="spinner"></span>) : ("Confirmar Cancelación")}
                     </button>
                 <button onClick={closeModal} className="btn-close-delet-modal">
                   Cerrar
