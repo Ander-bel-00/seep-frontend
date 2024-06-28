@@ -47,51 +47,62 @@ function Bitacoras() {
   };
 
   const handleArchivoChange = (e) => {
-    setDocumento({
-      ...documento,
-      archivo: e.target.files[0],
-    });
+    const archivo = e.target.files[0];
+    const allowedFileTypes = ['application/vnd.ms-excel', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'application/vnd.google-apps.spreadsheet'];
+    
+    if (archivo && !allowedFileTypes.includes(archivo.type)) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Archivo no permitido',
+        text: 'Solo se permiten archivos de Excel o hojas de cálculo de Google',
+        showConfirmButton: true,
+      });
+      setDocumento({ ...documento, archivo: null });
+      e.target.value = null;
+      return;
+    }
+    setDocumento({ ...documento, archivo });
   };
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true); // Activar el estado de carga
+    setLoading(true);
     const formData = new FormData();
-    formData.append("numero_de_bitacora", documento.numero_de_bitacora);
-    formData.append("archivo", documento.archivo);
-
+    formData.append('numero_de_bitacora', documento.numero_de_bitacora);
+    formData.append('archivo', documento.archivo);
+  
     try {
       await clienteAxios.post(`/bitacoras-upload/${id_aprendiz}`, formData, {
         headers: {
-          "Content-Type": "multipart/form-data",
+          'Content-Type': 'multipart/form-data',
         },
       });
-
+  
       Swal.fire({
-        icon: "success",
-        title: "Bitácora cargada exitosamente",
+        icon: 'success',
+        title: 'Bitácora cargada exitosamente',
         showConfirmButton: true,
       });
-
-      const response = await clienteAxios.get(
-        `/bitacoras-aprendiz/${id_aprendiz}`
-      );
+  
+      const response = await clienteAxios.get(`/bitacoras-aprendiz/${id_aprendiz}`);
       const sortedBitacoras = response.data.bitacoras.sort(
         (a, b) => a.numero_de_bitacora - b.numero_de_bitacora
       );
       setDocumentosAprendiz(sortedBitacoras);
     } catch (error) {
-      console.error("Error al cargar la bitácora:", error);
+      console.error('Error al cargar la bitácora:', error);
       Swal.fire({
-        icon: "error",
-        title: "Error al cargar la bitácora",
+        icon: 'error',
+        title: 'Error al cargar la bitácora',
         text: error.response.data.mensaje,
         showConfirmButton: true,
       });
     } finally {
-      setLoading(false); // Desactivar el estado de carga
+      setLoading(false);
     }
   };
+  
 
   const handleDownload = async (archivo) => {
     try {

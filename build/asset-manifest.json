@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.96ed15dc.css",
-    "main.js": "/static/js/main.bdf785ea.js",
+    "main.js": "/static/js/main.c6a8d450.js",
     "static/js/300.c7b147f7.chunk.js": "/static/js/300.c7b147f7.chunk.js",
     "static/js/952.034ca8e7.chunk.js": "/static/js/952.034ca8e7.chunk.js",
     "static/js/856.5a41500c.chunk.js": "/static/js/856.5a41500c.chunk.js",
@@ -11,7 +11,7 @@
     "static/media/sena-seeep.png": "/static/media/sena-seeep.5daa63223e9b66768e19.png",
     "index.html": "/index.html",
     "main.96ed15dc.css.map": "/static/css/main.96ed15dc.css.map",
-    "main.bdf785ea.js.map": "/static/js/main.bdf785ea.js.map",
+    "main.c6a8d450.js.map": "/static/js/main.c6a8d450.js.map",
     "300.c7b147f7.chunk.js.map": "/static/js/300.c7b147f7.chunk.js.map",
     "952.034ca8e7.chunk.js.map": "/static/js/952.034ca8e7.chunk.js.map",
     "856.5a41500c.chunk.js.map": "/static/js/856.5a41500c.chunk.js.map",
@@ -19,6 +19,6 @@
   },
   "entrypoints": [
     "static/css/main.96ed15dc.css",
-    "static/js/main.bdf785ea.js"
+    "static/js/main.c6a8d450.js"
   ]
 }
