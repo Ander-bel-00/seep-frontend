@@ -50,6 +50,8 @@ function Calendario() {
     "Segunda visita",
     "Tercera visita",
   ]);
+  // Estado para mostrar spinner si se está cargando los datos.
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const obtenerUsuario = async () => {
@@ -239,6 +241,7 @@ function Calendario() {
 
   const cancelarEvento = async () => {
     try {
+      setLoading(true); // Activar el estado de carga
       const id_visita = selectedEvent.id_visita;
       await clienteAxios.put(`/visitas-cancelar/${id_visita}`, {
         motivo_cancelacion: motivoCancelacion,
@@ -261,6 +264,8 @@ function Calendario() {
         title: "Error",
         text: "Hubo un error al intentar cancelar la visita",
       });
+    } finally {
+      setLoading(false); // Desactivar el estado de carga
     }
   };
 
@@ -555,7 +560,7 @@ function Calendario() {
                         className="btn btn-danger"
                         onClick={openCancelModal}
                       >
-                        Cancelar Visita
+                        {loading ? (<span className="spinner"></span>) : ("Cancelar Visita")}
                       </button>
                     </div>
                   )}

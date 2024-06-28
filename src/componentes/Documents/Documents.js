@@ -70,7 +70,7 @@ function Documents() {
     if (documentoExistente) {
       Swal.fire({
         icon: "error",
-        title: "El tipo de documento ya ha sido cargado",
+        title: "El tipo de documento ya se ha cargado",
         text: `Ya se subió un archivo para el tipo de documento: ${documento.tipo_documento}`,
         showConfirmButton: true,
       });
