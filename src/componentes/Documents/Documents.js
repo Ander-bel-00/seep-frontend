@@ -61,6 +61,7 @@ function Documents() {
         text: `Ya se subió un archivo para el tipo de documento: ${documento.tipo_documento}`,
         showConfirmButton: true,
       });
+      setLoading(false);
       return;
     }
 
@@ -98,6 +99,7 @@ function Documents() {
           "Hubo un problema al subir el documento",
         showConfirmButton: true,
       });
+      setLoading(false);
     } finally {
       setLoading(false); // Desactivar el estado de carga
     }
