@@ -35,6 +35,12 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route
+          path="*"
+          element={
+            isAuthenticated ? <Navigate to={`/${userRole}`} /> : <Navigate to="/login"/>
+          }
+        />
+        <Route
           path="/login"
           element={
             isAuthenticated ? <Navigate to={`/${userRole}`} /> : <LoginForm />
@@ -76,7 +82,6 @@ function App() {
                   modalIsOpen={modalIsOpen}
                   modalEmpresaOpen={modalEmpresaOpen}
                 />
-
                 <Routes>
                   <Route
                     path="/"
